@@ -1,6 +1,6 @@
 {
   "name" : "Mr.Roboto"
-  "description" "Discord Bot",
+  "description": "Test",
   "version": "0.0.0",
   "main": "myBot.js",
   "scripts": {
