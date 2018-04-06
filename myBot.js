@@ -9,7 +9,7 @@ function alea(){
 
 /* Quand la console est prête */
 client.on("ready", () => {
-  client.user.setActivity('coucou');
+  console.log("I am ready!");
 });
 
 /* Le ping pong */
