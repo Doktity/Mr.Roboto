@@ -1,5 +1,5 @@
 {
-  "name" : "Mr.Roboto"
+  "name" : "Mr.Roboto",
   "description": "Test",
   "version": "0.0.0",
   "main": "myBot.js",
