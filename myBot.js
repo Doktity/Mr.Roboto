@@ -9,7 +9,7 @@ function alea(){
 
 /* Quand la console est prête */
 client.on("ready", () => {
-  bot.user.setPresence({ game: { name: 'coucou', type: 0 } });
+  bot.user.setActivity('coucou');
 });
 
 /* Le ping pong */
