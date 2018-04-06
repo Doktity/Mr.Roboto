@@ -69,5 +69,14 @@ client.on("message", (message) => {
 	}
 });
 
+/* Les 1998 */
+client.on("message", (message) => {
+	if (message.content.startsWith("$1998")) {
+		message.channel.send("Les 1998, c'est des Thugs :sunglasses:", {
+			file : "./image/chat_thug.gif"
+		});
+	}
+});
+
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
