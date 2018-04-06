@@ -23,7 +23,7 @@ client.on("message", (message) => {
 });
 
 client.on("message", (message) => {
-	if (message.content.startsWith("$picture")) {
+	if (message.content.startsWith("$you")) {
 		message.channel.send("", {
 			file : "./image/img_you" + alea() + ".jpg"
 		});
