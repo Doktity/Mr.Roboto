@@ -10,6 +10,7 @@ function alea(){
 /* Quand la console est prête */
 client.on("ready", () => {
   console.log("I am ready!");
+  bot.user.setGame('coucou');
 });
 
 /* Le ping pong */
