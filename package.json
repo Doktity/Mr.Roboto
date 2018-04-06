@@ -1,0 +1,13 @@
+{
+  "name" : "Mr.Roboto"
+  "description": "Discord Bot",
+  "version": "0.0.0",
+  "main": "myBot.js",
+  "scripts": {
+    "start": "node myBot.js"
+  },
+  "dependencies": {
+    "discord.js": "11.1.0",
+    "request": "2.81.0"
+  }
+}
