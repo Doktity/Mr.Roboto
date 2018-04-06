@@ -60,4 +60,4 @@ client.on("message", (message) => {
 	}
 });
 
-client.login(process.env.NDI2NDcyMDM3MzE4NTI0OTQz.DZbbhQ.Gpwe6G9niEV0KmKr6HprCW1ff6c);
+client.login(process.env."NDI2NDcyMDM3MzE4NTI0OTQz.Dakwsw.gVywgSqe_qYHmIfMTQmbFTD53BQ");
