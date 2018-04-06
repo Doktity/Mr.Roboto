@@ -25,7 +25,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$picture")) {
 		message.channel.send("", {
-			file : "./image" + alea() + ".jpg"
+			file : "./image/img_you" + alea() + ".jpg"
 		});
 	}
 });
@@ -33,7 +33,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$nul")) {
 		message.channel.send("gros naze", {
-			file : "./naze.jpg"
+			file : "./image/img_naze.jpg"
 		});
 	}
 });
@@ -41,7 +41,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$joie")) {
 		message.channel.send("La joie", {
-			file : "./joie" + alea() + ".jpg"
+			file : "./image/img_joie" + alea() + ".jpg"
 		});
 	}
 });
@@ -55,7 +55,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$1999")) {
 		message.channel.send("Les 1999, ces dieux :heart:", {
-			file : "./1999.gif"
+			file : "./image/img_1999.gif"
 		});
 	}
 });
