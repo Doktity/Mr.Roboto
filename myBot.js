@@ -123,7 +123,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
+/*client.on('message', message => {
   if (message.content.startsWith('$play')) {
     console.log('Got a song request!');
     const voiceChannel = message.member.voiceChannel;
