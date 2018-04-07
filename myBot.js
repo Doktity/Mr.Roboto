@@ -85,8 +85,8 @@ client.on("message", (message) => {
 	}
 });
 
-/*/* Interaction dans un channel audio */
-bot.on('message', message => {
+/* Interaction dans un channel audio */
+client.on('message', message => {
 
   if (message.content.startsWith('!play')) {
     // On récupère le premier channel audio du serveur
@@ -116,7 +116,7 @@ bot.on('message', message => {
       })
   }
 
-})*/
+})
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
