@@ -117,7 +117,7 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
+/*client.on('message', message => {
 	if (message.content.startWith('$play')) {
 		// Note that this will only work if the message was sent in a guild
 		// and the author is actually in a voice channel.
@@ -127,7 +127,7 @@ client.on('message', message => {
 		channel.join()
 		message.channel.send("coucou");
 	}
-});
+});*/
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
