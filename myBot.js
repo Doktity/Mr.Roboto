@@ -29,7 +29,7 @@ client.on("message", (message) => {
 /* Eric Tan */
 client.on("message", (message) => {
 	if (message.content.startsWith("$Tan") || message.content.startsWith("$tan")){
-		message.channel.send("HENRI TAN !! Nan je déconne évidemment que je m'appelle Eric Tan.");
+		message.channel.send("HENRI TAN !! Nan je déconne évidemment je m'appelle Eric Tan.");
 	}
 });
 
@@ -85,6 +85,10 @@ client.on("message", (message) => {
 	}
 });
 
+
+// J'AI TENTER DES TRUCS MES CA FONCTIONNE PAS :'(
+
+
 /* Interaction dans un channel audio */
 client.on('message', message => {
 	if (message.content.startsWith('$faitpeterleson')) {
@@ -117,21 +121,21 @@ client.on('message', message => {
 });
 
 
-/*client.on('message', message => {
+client.on('message', message => {
 	if (message.content.startWith('$play')) {
 		// Note that this will only work if the message was sent in a guild
 		// and the author is actually in a voice channel.
 		// You might want to check for all that stuff first
-		const voiceChannel = message.member.voiceChannel;
+		const channel = message.member.voiceChannel;
 		
-		if(!voiceChannel){
+		if(!channel){
 			message.channel.send("Rentre dans un vocal !");
 		}else{
 
-			voiceChannel.join()
+			channel.join()
 			.then(connection => {
 				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
-				connection.playStream('stream');
+				connection.playStream(stream);
 				connection.on('end', function () {
 					connection.disconnect();
 				});
