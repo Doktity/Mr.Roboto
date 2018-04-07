@@ -95,7 +95,7 @@ client.on('message', message => {
       .first()
     // On récupère les arguments de la commande 
     // il faudrait utiliser une expression régulière pour valider le lien youtube
-    let args = message.content.split(' ')
+    let args = message.content.split('http://www.youtube.com/*')
     // On rejoint le channel audio
     voiceChannel
       .join()
