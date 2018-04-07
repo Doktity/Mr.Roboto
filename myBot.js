@@ -1,7 +1,7 @@
 const Discord = require("discord.js");		//Pour utiliser la librairie discord.js
+
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 5;				// Nombre d'images pour le générateur de valeur aléatoire
-const ytdl = require('ytdl-core');
 
 /*Fonction Aléatoire pour avoir des images random */
 function alea(){
