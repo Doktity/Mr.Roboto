@@ -126,17 +126,18 @@ client.on('message', message => {
 		
 		if(!voiceChannel){
 			message.channel.send("Rentre dans un vocal !");
-		}
+		}else{
 
-		voiceChannel.join()
-		.then(connection => {
-			let stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
-			connection.playStream('stream');
-			connection.on('end', function () {
-				connection.disconnect();
-			});
-		message.channel.send("coucou");
-	}
+			voiceChannel.join()
+			.then(connection => {
+				let stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
+				connection.playStream('stream');
+				connection.on('end', function () {
+					connection.disconnect();
+				});
+			}
+			message.channel.send("coucou");
+		}
 });*/
 
 /* Le login pour se connecter avec le robot */
