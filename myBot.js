@@ -122,7 +122,7 @@ client.on('message', message => {
 		// Note that this will only work if the message was sent in a guild
 		// and the author is actually in a voice channel.
 		// You might want to check for all that stuff first
-		let voiceChannel = message.member.voiceChannel;
+		const voiceChannel = message.member.voiceChannel;
 		
 		if(!voiceChannel){
 			message.channel.send("Rentre dans un vocal !");
@@ -130,7 +130,7 @@ client.on('message', message => {
 
 			voiceChannel.join()
 			.then(connection => {
-				let stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
+				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
 				connection.playStream('stream');
 				connection.on('end', function () {
 					connection.disconnect();
