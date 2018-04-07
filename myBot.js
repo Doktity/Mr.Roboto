@@ -86,7 +86,7 @@ client.on("message", (message) => {
 });
 
 /* Interaction dans un channel audio */
-client.on('message', message => {
+/*client.on('message', message => {
 
   if (message.content.startsWith('$faitpeterleson')) {
     // On récupère le premier channel audio du serveur
@@ -116,7 +116,7 @@ client.on('message', message => {
       })
   }
 
-});
+});*/
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
