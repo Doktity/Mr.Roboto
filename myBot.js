@@ -86,9 +86,9 @@ client.on("message", (message) => {
 });
 
 /* Interaction dans un channel audio */
-/*client.on('message', message => {
+client.on('message', message => {
 	if (message.content.startsWith('$faitpeterleson')) {
-		message.channel.send("LES 2000 SONT DEBILES");
+		message.channel.send("coucou");
 	// On récupère le premier channel audio du serveur
   		let voiceChannel = message.member.channels;
      		.filter(function (channel) { return channel.type === 'voice' });
@@ -114,7 +114,7 @@ client.on("message", (message) => {
           		});
       		})
  	}
-});*/
+});
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
