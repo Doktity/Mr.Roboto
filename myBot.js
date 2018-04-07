@@ -90,7 +90,7 @@ client.on('message', message => {
 	if (message.content.startsWith('$faitpeterleson')) {
 		message.channel.send("coucou");
 	// On récupère le premier channel audio du serveur
-  		let voiceChannel = message.member.channels;
+  		/*let voiceChannel = message.member.channels;
      		.filter(function (channel) { return channel.type === 'voice' });
 		.first();
   		// On récupère les arguments de la commande 
@@ -112,7 +112,7 @@ client.on('message', message => {
           		.on('end', function () {
             			connection.disconnect();
           		});
-      		})
+      		})*/
  	}
 });
 
