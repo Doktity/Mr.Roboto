@@ -122,27 +122,23 @@ client.on('message', message => {
 });
 
 
-client.on('message', message => {
-	if (message.content.startWith('$play')) {
-		// Note that this will only work if the message was sent in a guild
-		// and the author is actually in a voice channel.
-		// You might want to check for all that stuff first
-		const channel = message.member.voiceChannel;
-		
-		if(!channel){
-			message.channel.send("Rentre dans un vocal !");
-		}else{
 
-			channel.join()
-			.then(connection => {
-				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
-				connection.playStream(stream);
-				connection.on('end', function () {
-					connection.disconnect();
-				});
-			}
-			message.channel.send("coucou");
-		}
+client.on('message', message => {
+  if (message.content.startsWith('$play')) {
+    console.log('Got a song request!');
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) {
+      return message.reply('Please be in a voice channel first!');
+    }
+    voiceChannel.join()
+      .then(connection => {
+        const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
+        const dispatcher = connection.playStream(stream);
+        dispatcher.on('end', () => {
+          voiceChannel.leave();
+        });
+      });
+  }
 });*/
 
 /* Le login pour se connecter avec le robot */
