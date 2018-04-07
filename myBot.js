@@ -85,7 +85,7 @@ client.on("message", (message) => {
 	}
 });
 
-/* Interaction dans un channel audio */
+/*/* Interaction dans un channel audio */
 bot.on('message', message => {
 
   if (message.content.startsWith('!play')) {
@@ -116,7 +116,7 @@ bot.on('message', message => {
       })
   }
 
-})
+})*/
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
