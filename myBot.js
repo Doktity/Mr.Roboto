@@ -90,18 +90,17 @@ client.on('message', message => {
 
   if (message.content.startsWith('$faitpeterleson')) {
     // On récupère le premier channel audio du serveur
-    let voiceChannel = message.guild.channels
-      .filter(function (channel) { return channel.type === 'voice' })
-      .first()
+    let voiceChannel = message.member.channels;
+    //  .filter(function (channel) { return channel.type === 'voice' })
+      //.first()
     // On récupère les arguments de la commande 
     // il faudrait utiliser une expression régulière pour valider le lien youtube
-    let args = message.content.split('http://www.youtube.com/*')
+   // let args = message.content.split('http://www.youtube.com/*')
     // On rejoint le channel audio
-    voiceChannel
-      .join()
-      .then(function (connection) {
+    voiceChannel.join()
+      .then(connection => console.log ('connection') {
         // On démarre un stream à partir de la vidéo youtube
-        let stream = YoutubeStream(args[1])
+       /* let stream = YoutubeStream(args[1])
         stream.on('error', function () {
           message.reply("Je n'ai pas réussi à lire cette vidéo :(")
           connection.disconnect()
@@ -111,7 +110,7 @@ client.on('message', message => {
         connection
           .playStream(stream)
           .on('end', function () {
-            connection.disconnect()
+            connection.disconnect()*/
           })
       })
   }
