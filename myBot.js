@@ -88,7 +88,7 @@ client.on("message", (message) => {
 /* Interaction dans un channel audio */
 client.on('message', message => {
 
-  if (message.content.startsWith('!play')) {
+  if (message.content.startsWith('$faitpeterleson')) {
     // On récupère le premier channel audio du serveur
     let voiceChannel = message.guild.channels
       .filter(function (channel) { return channel.type === 'voice' })
