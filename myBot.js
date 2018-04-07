@@ -116,7 +116,7 @@ client.on('message', message => {
       })
   }
 
-})
+});
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
