@@ -29,7 +29,7 @@ client.on("message", (message) => {
 /* Eric Tan */
 client.on("message", (message) => {
 	if (message.content.startsWith("$Tan") || message.content.startsWith("$tan")){
-		message.channel.send("HENRI TAN !! ");
+		message.channel.send("HENRI TAN !! Nan je déconne évidemment que je m'appelle Eric Tan.");
 	}
 });
 
