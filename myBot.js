@@ -83,7 +83,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$dance")) {
 		message.channel.send("DANCE", {
-			file : "./image/img_dance" + alea() + ".jpg"
+			file : "./image/img_dance" + alea() + ".gif"
 		});
 	}
 });
@@ -93,7 +93,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$party")) {
 		message.channel.send("LA FETE", {
-			file : "./image/img_party" + alea() + ".jpg"
+			file : "./image/img_party" + alea() + ".gif"
 		});
 	}
 });
