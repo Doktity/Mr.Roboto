@@ -137,6 +137,7 @@ client.on('message', message => {
 						.pipe(fs.createWriteStream('video.fvl'));
 				//const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
+				channel.leave();
 				/*dispatcher.on('end', () => {
 					channel.leave();
 				});*/
@@ -144,13 +145,6 @@ client.on('message', message => {
 	}
 });
 
-
-client.on('message', message => {
-	if (message.content.startsWith('$leave')) {
-		const channel = message.member.voiceChannel;
-		channel.leave();
-	});
-});
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
