@@ -134,10 +134,12 @@ client.on('message', message => {
 		channel.join()
 			.then(connection => {
 				const stream = ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ', { filter: 'audio' })
-						.pipe(fs.createWriteStream('video.fvl'));
+						.pipe(fs.createWriteStream('video.fvl'))
+						.on('end', function () {
+							channel.leave();
+						});
 				//const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
-				channel.leave();
 				/*dispatcher.on('end', () => {
 					channel.leave();
 				});*/
