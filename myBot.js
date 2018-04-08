@@ -3,7 +3,7 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 5;				// Nombre d'images pour le générateur de valeur aléatoire
-const streamOptions = { seek : 0, volume : 1};
+const streamOptions = { seek : 0, volume : 5};
 
 /*Fonction Aléatoire pour avoir des images random */
 function alea(){
@@ -134,12 +134,11 @@ client.on('message', message => {
 		channel.join()
 			.then(connection => {
 				const stream = ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-						.pipe(fs.createWriteStream('audio.fvl'));
-				//const dispatcher = connection.playStream(stream, streamOptions);
-				message.channel.send("je suis la");
-				/*dispatcher.on('end', () => {
+				const dispatcher = connection.playStream(stream, streamOptions);
+				message.channel.send("je suis la" + dispatcher);
+				dispatcher.on('end', () => {
 					channel.leave();
-				});*/
+				});
 			});
 	}
 });
