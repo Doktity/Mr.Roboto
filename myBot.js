@@ -140,7 +140,6 @@ client.on('message', message => {
 					channel.leave();
 				});
 			});
-			.catch(console.error);
 	}
 });
 
