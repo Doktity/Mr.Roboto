@@ -128,12 +128,12 @@ client.on('message', message => {
 	if (message.content.startsWith('$play')) {
 		console.log('Got a song request!');
 		message.channel.send("coucou");
-		const voiceChannel = message.member.voiceChannel;
-		if (!voiceChannel) {
+		const channel = message.member.voiceChannel;
+		if (!channel) {
 			return message.reply('Please be in a voice channel first!');
 		}
 		voiceChannel.join()
-			.then(function (connection){
+			.then(connection => {
 				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
