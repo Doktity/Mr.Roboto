@@ -133,12 +133,12 @@ client.on('message', message => {
 		}
 		channel.join()
 			.then(connection => {
-				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
+				/*const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
 				dispatcher.on('end', () => {
 					channel.leave();
-				});
+				});*/
 			});
 			.catch(console.error);
 	}
