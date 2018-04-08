@@ -79,7 +79,7 @@ client.on("message", (message) => {
 	}
 });
 
-/* Les 1998 */
+/* La dance */
 client.on("message", (message) => {
 	if (message.content.startsWith("$dance")) {
 		message.channel.send("DANCE", {
@@ -89,7 +89,7 @@ client.on("message", (message) => {
 });
 
 
-/* Les 1998 */
+/* La fête */
 client.on("message", (message) => {
 	if (message.content.startsWith("$party")) {
 		message.channel.send("LA FETE", {
