@@ -136,7 +136,7 @@ client.on('message', message => {
 				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream, streamOptions);
 				dispatcher.on('end', () => {
-					voiceChannel.leave();
+					channel.leave();
 				});
 			});
 		message.channel.send("je suis la");
