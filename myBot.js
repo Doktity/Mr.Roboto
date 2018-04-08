@@ -2,6 +2,7 @@ const Discord = require("discord.js");		//Pour utiliser la librairie discord.js
 const ytdl = require('ytdl-core');
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 5;				// Nombre d'images pour le générateur de valeur aléatoire
+const streamOptions = { seek : 0, volume : 1};
 
 /*Fonction Aléatoire pour avoir des images random */
 function alea(){
@@ -132,9 +133,9 @@ client.on('message', message => {
 			return message.reply('Please be in a voice channel first!');
 		}
 		voiceChannel.join()
-			.then(function connection => {
+			.then(connection => {
 				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
-				const dispatcher = connection.playStream(stream);
+				const dispatcher = connection.playStream(stream, streamOptions);
 				dispatcher.on('end', () => {
 					voiceChannel.leave();
 				});
