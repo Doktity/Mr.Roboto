@@ -127,7 +127,6 @@ client.on('message', message => {
 client.on('message', message => {
 	if (message.content.startsWith('$play')) {
 		console.log('Got a song request!');
-		message.channel.send("coucou");
 		const channel = message.member.voiceChannel;
 		if (!channel) {
 			return message.reply('Please be in a voice channel first!');
