@@ -124,21 +124,22 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-  if (message.content.startsWith('$play')) {
-    console.log('Got a song request!');
-    const voiceChannel = message.member.voiceChannel;
-    if (!voiceChannel) {
-      return message.reply('Please be in a voice channel first!');
-    }
-    voiceChannel.join()
-      .then(connection => {
-        const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
-        const dispatcher = connection.playStream(stream);
-        dispatcher.on('end', () => {
-          voiceChannel.leave();
-        });
-      });
-  }
+	if (message.content.startsWith('$play')) {
+		console.log('Got a song request!');
+		message.channel.send("coucou");
+		const voiceChannel = message.member.voiceChannel;
+		if (!voiceChannel) {
+			return message.reply('Please be in a voice channel first!');
+		}
+		voiceChannel.join()
+			.then(connection => {
+				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
+				const dispatcher = connection.playStream(stream);
+				dispatcher.on('end', () => {
+				voiceChannel.leave();
+			});
+		});
+	}
 });
 
 /* Le login pour se connecter avec le robot */
