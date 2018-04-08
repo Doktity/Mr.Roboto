@@ -132,15 +132,15 @@ client.on('message', message => {
 			return message.reply('Please be in a voice channel first!');
 		}
 		channel.join()
-			.then(function (connection) => {
+			.then(function (connection) => console.log("connecté!"))/*{
 				const stream = ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ', { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
 				dispatcher.on('end', () => {
 					channel.leave();
 				});
-			});
-		message.channel.send("je suis la");
+			});*/
+			.catch(console.error);
 	}
 });
 
