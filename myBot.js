@@ -136,9 +136,9 @@ client.on('message', message => {
 				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream);
 				dispatcher.on('end', () => {
-				voiceChannel.leave();
+					voiceChannel.leave();
+				});
 			});
-		});
 	}
 });
 
