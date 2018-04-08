@@ -124,7 +124,7 @@ client.on("message", (message) => {
 
 
 
-client.on('message', message => {
+/*client.on('message', message => {
 	if (message.content.startsWith('$play')) {
 		console.log('Got a song request!');
 		const channel = message.member.voiceChannel;
@@ -132,17 +132,17 @@ client.on('message', message => {
 			return message.reply('Please be in a voice channel first!');
 		}
 		channel.join()
-			/*.then(connection => {
+			.then(connection => {
 				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
 				dispatcher.on('end', () => {
 					channel.leave();
 				});
-			});*/
+			});
 			.catch(console.error);
 	}
-});
+});*/
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
