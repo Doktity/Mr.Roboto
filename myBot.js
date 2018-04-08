@@ -92,7 +92,7 @@ client.on("message", (message) => {
 
 
 /* Interaction dans un channel audio */
-client.on('message', message => {
+/*client.on('message', message => {
 	if (message.content.startsWith('$faitpeterleson')) {
 	// On récupère le premier channel audio du serveur
   		let voiceChannel = message.member.channels;
@@ -119,7 +119,7 @@ client.on('message', message => {
           		});
       		})
  	}
-});
+});*/
 
 
 
@@ -132,7 +132,7 @@ client.on('message', message => {
 		}
 		channel.join()
 			.then(connection => {
-				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audioonly' });
+				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audio' });
 				const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
 				dispatcher.on('end', () => {
