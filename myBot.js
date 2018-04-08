@@ -144,5 +144,13 @@ client.on('message', message => {
 	}
 });
 
+
+client.on('message', message => {
+	if (message.content.startsWith('$leave')) {
+		const channel = message.member.voiceChannel;
+		channel.leave();
+	});
+});
+
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
