@@ -132,7 +132,7 @@ client.on('message', message => {
 			return message.reply('Please be in a voice channel first!');
 		}
 		channel.join()
-			.then(function (connection) => console.log("connecté!"))/*{
+			.then(connection => console.log("connecté!"))/*{
 				const stream = ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ', { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
