@@ -134,7 +134,7 @@ client.on('message', message => {
 		channel.join()
 			.then(connection => {
 				const stream = ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-				const dispatcher = connection.playStream(stream, streamOptions);
+				const dispatcher = connection.play(stream, streamOptions);
 				message.channel.send("je suis la" + dispatcher);
 				dispatcher.on('end', () => {
 					channel.leave();
