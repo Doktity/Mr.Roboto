@@ -132,7 +132,7 @@ client.on('message', message => {
 		}
 		channel.join()
 			.then(connection => {
-				const stream = ytdl('https://www.youtube.com/watch?v=Hz0Ct5SlV_g', { filter: 'audio' });
+				const stream = ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ', { filter: 'audio' });
 				const dispatcher = connection.playStream(stream, streamOptions);
 				message.channel.send("je suis la");
 				dispatcher.on('end', () => {
