@@ -124,7 +124,7 @@ client.on("message", (message) => {
 
 
 
-/*client.on('message', message => {
+client.on('message', message => {
 	if (message.content.startsWith('$play')) {
 		console.log('Got a song request!');
 		const channel = message.member.voiceChannel;
@@ -142,7 +142,7 @@ client.on("message", (message) => {
 			});
 			.catch(console.error);
 	}
-});*/
+});
 
 /* Le login pour se connecter avec le robot */
 client.login(process.env.BOT_TOKEN);
