@@ -103,7 +103,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$1998")) {
 		message.channel.send("Les 1998, c'est des Thugs :sunglasses:", {
-			file : "./image/chat_thug.gif"
+			file : "./image/img_1998.gif"
 		});
 	}
 });
