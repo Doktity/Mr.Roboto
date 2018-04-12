@@ -109,6 +109,16 @@ client.on("message", (message) => {
 });
 
 
+/* Images aléatoires quand on est triste */
+client.on("message", (message) => {
+	if (message.content.startsWith("$triste")) {
+		message.channel.send("La tristesse", {
+			file : "./image/img_triste" + alea() + ".jpg"
+		});
+	}
+});
+
+
 // J'AI TENTER DES TRUCS MES CA FONCTIONNE PAS :'(
 
 
