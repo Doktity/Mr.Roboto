@@ -122,7 +122,9 @@ client.on("message", (message) => {
 /* La bataille */
 client.on("message", (message) => {
 	if (message.content.startsWith("$taper")){
-		message.channel.send("veut se battre !");
+		const args = message.content.slice(config.prefix.length).trim().split(/ $/g);
+		const command = args.shift().toLowerCase();
+		message.channel.send(client.users.get("name", args ).id + "veut se battre !");
 	}
 });
 
