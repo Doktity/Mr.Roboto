@@ -119,7 +119,7 @@ client.on("message", (message) => {
 });
 
 
-/* La bataille */
+/* voir l'avatar des gens */
 client.on("message", (message) => {
 	if(message.content.startsWith("$avatar")) { //IF for the command.
 	    if(message.mentions.users.first()) { //Check if the message has a mention in it.
@@ -128,7 +128,7 @@ client.on("message", (message) => {
 		  "\nAvatar URL: " + user.avatarURL; /*The Avatar URL*/
 		  message.channel.sendMessage(output); //We send the output in the current channel.
 	    } else {
-		  message.reply("Invalid user."); //Reply with a mention saying "Invalid user."
+		  message.reply("La personne mentionnée n'est pas trouvée :("); //Reply with a mention saying "Invalid user."
 	    }
 	}
 });
