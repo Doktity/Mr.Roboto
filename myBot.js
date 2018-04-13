@@ -122,7 +122,7 @@ client.on("message", (message) => {
 /* La bataille */
 client.on("message", (message) => {
 	if (message.content.startsWith("$taper")){
-		message.channel.send(message.channel.author.id + "veut se battre !");
+		message.channel.send("veut se battre !");
 	}
 });
 
