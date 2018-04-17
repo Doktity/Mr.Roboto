@@ -118,6 +118,14 @@ client.on("message", (message) => {
 	}
 });
 
+/* Quand quelqu'un est pas content */
+client.on("message", (message) => {
+	if (message.content.startsWith("$pascontent")) {
+		message.channel.send("", {
+			file : "./image/gohan.gif"
+		});
+	}
+});
 
 /* voir l'avatar des gens */
 client.on("message", (message) => {
