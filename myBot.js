@@ -118,6 +118,15 @@ client.on("message", (message) => {
 	}
 });
 
+/* Images aléatoires quand on est JOJO */
+client.on("message", (message) => {
+	if (message.content.startsWith("$jojo")) {
+		message.channel.send("SONO CHI NO SADAME", {
+			file : "./image/img_jojo" + alea() + ".jpg"
+		});
+	}
+});
+
 /* Quand quelqu'un est pas content */
 client.on("message", (message) => {
 	if (message.content.startsWith("$pascontent")) {
