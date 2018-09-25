@@ -139,7 +139,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$mathis")) {
 		message.channel.send("Mathis ce dieu :heart:", {
-			file : "./image/telechargements.jpeg"
+			file : "./image/téléchargement.jpeg"
 		});
 	}
 });
