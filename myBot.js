@@ -145,6 +145,15 @@ client.on("message", (message) => {
 	}
 });
 
+/* Clément*/
+client.on("message", (message) => {
+	if (message.content.startsWith("$clément")) {
+		message.channel.send("Clément PGM Fortnite :sunglasses:", {
+			file : "./image/bambi.png"
+		});
+	}
+})
+
 /* voir l'avatar des gens */
 client.on("message", (message) => {
 	if(message.content.startsWith("$avatar")) { //IF for the command.
