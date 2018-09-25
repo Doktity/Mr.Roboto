@@ -120,7 +120,7 @@ client.on("message", (message) => {
 
 /* Images aléatoires quand on est JOJO */
 client.on("message", (message) => {
-	if (message.content.startsWith("$jojo")) {
+	if (message.content.startsWith("$jojo") || message.content.startsWith("$JOJO")) {
 		message.channel.send("SONO CHI NO SADAME", {
 			file : "./image/img_jojo" + alea() + ".jpg"
 		});
@@ -135,6 +135,7 @@ client.on("message", (message) => {
 		});
 	}
 });
+
 /* Mathis*/
 client.on("message", (message) => {
 	if (message.content.startsWith("$mathis")) {
