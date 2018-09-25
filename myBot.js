@@ -152,7 +152,16 @@ client.on("message", (message) => {
 			file : "./image/bambi.png"
 		});
 	}
-})
+});
+
+/*Benjamin*/ 
+client.on("message", (message) => { 
+	if (message.content.startsWith("$benjamin")) { 
+		message.channel.send("Mais qui est cet homme magnifique ??? Mais c'est Ben :ok_hand: ", { 
+			file : "./image/wow.gif" 
+		});
+	}
+});
 
 /* voir l'avatar des gens */
 client.on("message", (message) => {
