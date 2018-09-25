@@ -135,6 +135,14 @@ client.on("message", (message) => {
 		});
 	}
 });
+/* Mathis*/
+client.on("message", (message) => {
+	if (message.content.startsWith("$mathis")) {
+		message.channel.send("Mathis ce dieu :heart:", {
+			file : "./image/telechargements.jpeg"
+		});
+	}
+});
 
 /* voir l'avatar des gens */
 client.on("message", (message) => {
