@@ -226,7 +226,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if (message.content.startsWith('$ALED')) {
-		message.author.sendMessage("Je viens t'aider !");
+		message.author.sendMessage("$ping -> renvoi pong\n$Gateau ou $gateau -> renvoi un délicieux gateau au chocolat\n");
 	}
 });
 
