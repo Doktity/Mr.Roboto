@@ -174,23 +174,19 @@ client.on("message", (message) => {
 		  	message.channel.send('**Attention **' + user + '** devient sérieux !**', {
 				file : "./image/img_instinct1.gif"
 			});
-		  };
-		  if (alea() === 1){
+		  }else if (alea() === 1){
 		  	message.channel.send(user + ', ce dieu :heart:', {
 				file : "./image/img_dieu1.jpeg"
 			});
-		  };
-		  if (alea() === 2){
+		  }else if (alea() === 2){
 		  	message.channel.send(user + ' PGM fortnite :sunglasses:', {
 				file : "./image/img_bambi.png"
 			});
-		  };
-		  if (alea() === 3){
+		  }else if (alea() === 3){
 		  	message.channel.send("***Mais qui est cet homme magnifique ??? Mais c'est ***" + user + "*** :ok_hand: ***", {
 				file : "./image/img_wow1.gif"
 			});
-		  };
-		  if (alea() === 4){
+		  }else if (alea() === 4){
 		  	message.channel.send("***L'incroyable ***" + user + "*** entre en scène ! ***", {
 				file : "./image/img_wow2.gif"
 			});
