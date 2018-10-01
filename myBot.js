@@ -2,7 +2,7 @@ const Discord = require("discord.js");		//Pour utiliser la librairie discord.js
 const ytdl = require('ytdl-core');
 const fs = require('fs');
 const client = new Discord.Client();		//Pour créer un nouveau client discord
-const nb_image = 5;				// Nombre d'images pour le générateur de valeur aléatoire
+const nb_image = 10;				// Nombre d'images pour le générateur de valeur aléatoire
 const streamOptions = { seek : 0, volume : 5};
 
 /*Fonction Aléatoire pour avoir des images random */
@@ -190,6 +190,26 @@ client.on("message", (message) => {
 		  }else if (res === 4){
 		  	message.channel.send("***L'incroyable ***" + user + "*** entre en scène ! ***", {
 				file : "./image/img_wow2.gif"
+			});
+		  }else if (res === 5){
+		  	message.channel.send("**La puissance de **" + user + "** est incroyable ! Elle dépasse 9000 unités !! **", {
+				file : "./image/img_emote5.gif"
+			});
+		  }else if (res === 6){
+		  	message.channel.send("**Un peu bête mais **" + user + "** est surtout inventif :yum:**", {
+				file : "./image/img_emote6.gif"
+			});
+		  }else if (res === 7){
+		  	message.channel.send("**On ne peut nier que **" + user + "** est débile, mais on l'aime quand même :heart: **", {
+				file : "./image/img_emote7.gif"
+			});
+		  }else if (res === 8){
+		  	message.channel.send("**Un vrai pro de la dance ce **" + user, {
+				file : "./image/img_emote8.gif"
+			});
+		  }else if (res === 9){
+		  	message.channel.send("**Personne ne peut embêter **" + user + "** sans en subir les conséquences ! **", {
+				file : "./image/img_emote9.gif"
 			});
 		  };
 	    } else {
