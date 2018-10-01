@@ -186,6 +186,17 @@ client.on("message", (message) => {
 	}
 });
 
+
+
+/*Younes*/ 
+client.on("message", (message) => { 
+	if (message.content.startsWith("$younes")) { 
+		message.channel.send("***Attention Younes passe devient sérieux !***", { 
+			file : "./image/img_instinct1.gif" 
+		});
+	}
+});
+
 /* voir l'avatar des gens */
 client.on("message", (message) => {
 	if(message.content.startsWith("$avatar")) { //IF for the command.
