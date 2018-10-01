@@ -218,8 +218,8 @@ client.on("message", (message) => {
 
 client.on('message', message => {
 	if (message.content.startsWith('$coucou bot')) {
-		let user = message.member.user.tag;
-		message.channel.send('COUCOU' + user);
+		let user = message.member.user;
+		message.channel.send('COUCOU ' + user);
 	}
 });
 
