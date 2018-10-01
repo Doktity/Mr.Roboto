@@ -149,54 +149,6 @@ client.on("message", (message) => {
 	}
 });
 
-/* Mathis*/
-client.on("message", (message) => {
-	if (message.content.startsWith("$mathis")) {
-		message.channel.send("Mathis ce dieu :heart:", {
-			file : "./image/téléchargement.jpeg"
-		});
-	}
-});
-
-/* Clément*/
-client.on("message", (message) => {
-	if (message.content.startsWith("$clément")) {
-		message.channel.send("Clément PGM Fortnite :sunglasses:", {
-			file : "./image/bambi.png"
-		});
-	}
-});
-
-/*Benjamin*/ 
-client.on("message", (message) => { 
-	if (message.content.startsWith("$benjamin")) { 
-		message.channel.send("***Mais qui est cet homme magnifique ??? Mais c'est Ben :ok_hand: ***", { 
-			file : "./image/img_wow1.gif" 
-		});
-	}
-});
-
-
-/*GUIGUI le coniocito*/ 
-client.on("message", (message) => { 
-	if (message.content.startsWith("$guillaume")) { 
-		message.channel.send("***L'incroyable bolo entre en scène ! ***", { 
-			file : "./image/img_wow2.gif" 
-		});
-	}
-});
-
-
-
-/*Younes*/ 
-client.on("message", (message) => { 
-	if (message.content.startsWith("$younes")) { 
-		message.channel.send("**Attention Younes devient sérieux !**", { 
-			file : "./image/img_instinct1.gif" 
-		});
-	}
-});
-
 /* voir l'avatar des gens */
 client.on("message", (message) => {
 	if(message.content.startsWith("$avatar")) { //IF for the command.
@@ -229,7 +181,7 @@ client.on("message", (message) => {
 			});
 		  };
 		  if (alea() === 2){
-		  	message.channel.send(user + 'PGM fortnite :sunglasses:', {
+		  	message.channel.send(user + ' PGM fortnite :sunglasses:', {
 				file : "./image/img_bambi.png"
 			});
 		  };
