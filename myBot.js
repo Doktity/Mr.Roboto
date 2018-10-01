@@ -135,7 +135,7 @@ client.on("message", (message) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("$pascontent")) {
 		message.channel.send("", {
-			file : "./image/gohan.gif"
+			file : "./image/img_gohan1.gif"
 		});
 	}
 });
