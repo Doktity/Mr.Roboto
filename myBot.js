@@ -140,6 +140,15 @@ client.on("message", (message) => {
 	}
 });
 
+/* Analyste */
+client.on("message", (message) => {
+	if (message.content.startsWith("$analyste")) {
+		message.channel.send("Je suis analyste financier, je ne peux pas aller au Yemen !", {
+			file : ""
+		});
+	}
+});
+
 /* Mathis*/
 client.on("message", (message) => {
 	if (message.content.startsWith("$mathis")) {
