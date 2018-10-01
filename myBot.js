@@ -170,23 +170,24 @@ client.on("message", (message) => {
 	if(message.content.startsWith("$emote")) { //IF for the command.
 	    if(message.mentions.users.first()) { //Check if the message has a mention in it.
 		  let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
-		  if (alea() === 0){
+		  res = alea();
+		  if (res === 0){
 		  	message.channel.send('**Attention **' + user + '** devient sérieux !**', {
 				file : "./image/img_instinct1.gif"
 			});
-		  }else if (alea() === 1){
+		  }else if (res === 1){
 		  	message.channel.send(user + ', ce dieu :heart:', {
 				file : "./image/img_dieu1.jpeg"
 			});
-		  }else if (alea() === 2){
+		  }else if (res === 2){
 		  	message.channel.send(user + ' PGM fortnite :sunglasses:', {
 				file : "./image/img_bambi.png"
 			});
-		  }else if (alea() === 3){
+		  }else if (res === 3){
 		  	message.channel.send("***Mais qui est cet homme magnifique ??? Mais c'est ***" + user + "*** :ok_hand: ***", {
 				file : "./image/img_wow1.gif"
 			});
-		  }else if (alea() === 4){
+		  }else if (res === 4){
 		  	message.channel.send("***L'incroyable ***" + user + "*** entre en scène ! ***", {
 				file : "./image/img_wow2.gif"
 			});
