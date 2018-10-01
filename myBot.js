@@ -66,7 +66,11 @@ client.on("message", (message) => {
 /* Les 2000 */
 client.on("message", (message) => {
 	if (message.content.startsWith("$2000")){
-		message.channel.send("LES 2000 SONT DEBILES");
+		if (message.content.startsWith("1")){
+			message.channel.send("Les 2000 sont beaux");
+		}else{
+			message.channel.send("LES 2000 SONT DEBILES");
+		}
 	}
 });
 
