@@ -216,6 +216,13 @@ client.on("message", (message) => {
 });*/
 
 
+client.on('message', message => {
+	if (message.content.startsWith('$coucou bot')) {
+		return message.reply('COUCOU' + message.member.user.tag);
+	}
+});
+
+
 
 client.on('message', message => {
 	if (message.content.startsWith('$play')) {
