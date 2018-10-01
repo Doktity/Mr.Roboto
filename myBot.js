@@ -224,6 +224,13 @@ client.on('message', message => {
 });
 
 
+client.on('message', message => {
+	if (message.content.startsWith('$ALED')) {
+		message.author.sendMessage("Je viens t'aider !");
+	}
+});
+
+
 
 client.on('message', message => {
 	if (message.content.startsWith('$play')) {
