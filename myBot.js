@@ -38,7 +38,7 @@ client.on("message", (message) => {
 
 /* Images aléatoires de Watanabe You */
 client.on("message", (message) => {
-	if (message.content.startsWith("$you") && !(message.content.startsWith('Younes'))) {
+	if (message.content.startsWith("$you") && !(message.content.startsWith('$younes'))) {
 		message.channel.send("", {
 			file : "./image/img_you" + alea() + ".jpg"
 		});
