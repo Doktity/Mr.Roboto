@@ -157,7 +157,7 @@ client.on("message", (message) => {
 /*Benjamin*/ 
 client.on("message", (message) => { 
 	if (message.content.startsWith("$benjamin")) { 
-		message.channel.send("Mais qui est cet homme magnifique ??? Mais c'est Ben :ok_hand: ", { 
+		message.channel.send("***Mais qui est cet homme magnifique ??? Mais c'est Ben :ok_hand: ***", { 
 			file : "./image/wow.gif" 
 		});
 	}
