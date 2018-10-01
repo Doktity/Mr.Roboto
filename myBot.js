@@ -38,7 +38,7 @@ client.on("message", (message) => {
 
 /* Images aléatoires de Watanabe You */
 client.on("message", (message) => {
-	if (message.content.startsWith("$you ")) {
+	if (message.content.startsWith("$you")) {
 		message.channel.send("", {
 			file : "./image/img_you" + alea() + ".jpg"
 		});
@@ -191,7 +191,7 @@ client.on("message", (message) => {
 /*Younes*/ 
 client.on("message", (message) => { 
 	if (message.content.startsWith("$younes")) { 
-		message.channel.send("***Attention Younes passe devient sérieux !***", { 
+		message.channel.send("**Attention Younes devient sérieux !**", { 
 			file : "./image/img_instinct1.gif" 
 		});
 	}
