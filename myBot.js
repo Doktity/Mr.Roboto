@@ -226,7 +226,7 @@ client.on('message', message => {
 client.on('message', message => {
 	let user = message.member.user;
 	if (message.member.user.tag === @Ecrubice#2213 ){
-		message.channel.send(user + ', chut");
+		message.channel.send(user + ', chut');
 	}
 });
 
