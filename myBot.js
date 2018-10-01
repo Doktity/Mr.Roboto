@@ -212,6 +212,44 @@ client.on("message", (message) => {
 });
 
 
+
+/* Emote sur des gens */
+client.on("message", (message) => {
+	if(message.content.startsWith("$emote")) { //IF for the command.
+	    if(message.mentions.users.first()) { //Check if the message has a mention in it.
+		  let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
+		  if (alea() === 0){
+		  	message.channel.send('**Attention **' + user + '** devient sérieux !**', {
+				file : "./image/img_instinct1.gif"
+			});
+		  };
+		  if (alea() === 1){
+		  	message.channel.send(user + ', ce dieu :heart:', {
+				file : "./image/img_dieu1.jpeg"
+			});
+		  };
+		  if (alea() === 2){
+		  	message.channel.send(user + 'PGM fortnite :sunglasses:', {
+				file : "./image/img_bambi.png"
+			});
+		  };
+		  if (alea() === 3){
+		  	message.channel.send("***Mais qui est cet homme magnifique ??? Mais c'est ***" + user + "*** :ok_hand: ***", {
+				file : "./image/img_wow1.gif"
+			});
+		  };
+		  if (alea() === 4){
+		  	message.channel.send("***L'incroyable ***" + user + "*** entre en scène ! ***", {
+				file : "./image/img_wow2.gif"
+			});
+		  };
+	    } else {
+		  message.reply("La personne mentionnée n'est pas trouvée :("); //Reply with a mention saying "Invalid user."
+	    }
+	}
+});
+
+
 // J'AI TENTER DES TRUCS MES CA FONCTIONNE PAS :'(
 
 
