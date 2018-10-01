@@ -226,7 +226,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if (message.content.startsWith('$ALED')) {
-		message.author.sendMessage("$ping -> renvoi pong\n$Gateau ou $gateau -> renvoi un délicieux gateau au chocolat\n");
+		message.author.sendMessage("Je viens t'aider !\n$ping -> renvoi pong\n$Gateau ou $gateau -> renvoi un délicieux gateau au chocolat\n$joie -> renvoi une image joyeuse\n$tristesse -> renvoi une triste image\n$dance -> renvoi un gif de danse\n$party -> renvoi un gif festif\n");
 	}
 });
 
