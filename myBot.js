@@ -171,7 +171,17 @@ client.on("message", (message) => {
 client.on("message", (message) => { 
 	if (message.content.startsWith("$benjamin")) { 
 		message.channel.send("***Mais qui est cet homme magnifique ??? Mais c'est Ben :ok_hand: ***", { 
-			file : "./image/wow.gif" 
+			file : "./image/img_wow1.gif" 
+		});
+	}
+});
+
+
+/*GUIGUI le coniocito*/ 
+client.on("message", (message) => { 
+	if (message.content.startsWith("$guillaume")) { 
+		message.channel.send("***L'incroyable bolo entre en scène ! ***", { 
+			file : "./image/img_wow2.gif" 
 		});
 	}
 });
