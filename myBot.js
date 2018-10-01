@@ -260,13 +260,6 @@ client.on('message', message => {
 	}
 });
 
-client.on('message', message => {
-	let user = message.member.user;
-	if (message.author.id === 'Ecrubice#2213' ){
-		message.channel.send(user + ', chut');
-	}
-});
-
 
 client.on('message', message => {
 	if (message.content.startsWith('$ALED')) {
