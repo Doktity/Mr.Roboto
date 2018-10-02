@@ -254,7 +254,8 @@ client.on("message", (message) => {
 
 
 client.on('message', message => {
-	if (message.content.startsWith('coucou') || message.content.startsWith('bonjour') || message.content.startsWith('salut')) {
+	msg = message.content.toLowerCase();
+	if (msg.startsWith('coucou') || msg.startsWith('bonjour') || msg.startsWith('salut')) {
 		let user = message.member.user;
 		message.channel.send('COUCOU ' + user);
 	}
