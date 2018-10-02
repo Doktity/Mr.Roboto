@@ -15,56 +15,52 @@ client.on("ready", () => {
 	  console.log("I am ready!");
 });
 
-/* Le ping pong */
-client.on("message", (message) => {
-	  if (message.content.startsWith("$ping")) {
-  		  message.channel.send("pong!");
-	  }
-});
 
-/* Le gateau */
 client.on("message", (message) => {
+	
+	/* Le ping pong */
+	if (message.content.startsWith("$ping")) {
+  		message.channel.send("pong!");
+	}
+
+
+	/* Le gateau */
 	if (message.content.startsWith("$Gateau") || message.content.startsWith("$gateau")){
 		message.channel.send("au chocolat");
 	}
-});
 
-/* Eric Tan */
-client.on("message", (message) => {
+	
+	/* Eric Tan */
 	if (message.content.startsWith("$Tan") || message.content.startsWith("$tan")){
 		message.channel.send("HENRI TAN !! Nan je déconne évidemment je m'appelle Eric Tan.");
 	}
-});
 
-/* Images aléatoires de Watanabe You */
-client.on("message", (message) => {
+	
+	/* Images aléatoires de Watanabe You */
 	if (message.content.startsWith("$you") && !(message.content.startsWith('$younes'))) {
 		message.channel.send("", {
 			file : "./image/img_you" + alea() + ".jpg"
 		});
 	}
-});
 
-/* Quand quelqu'un est nul */
-client.on("message", (message) => {
+	
+	/* Quand quelqu'un est nul */
 	if (message.content.startsWith("$nul")) {
 		message.channel.send("gros naze", {
 			file : "./image/img_naze.jpg"
 		});
 	}
-});
 
-/* Images aléatoires quand on est content */
-client.on("message", (message) => {
+	
+	/* Images aléatoires quand on est content */
 	if (message.content.startsWith("$joie")) {
 		message.channel.send("La joie", {
 			file : "./image/img_joie" + alea() + ".jpg"
 		});
 	}
-});
-
-/* Les 2000 */
-client.on("message", (message) => {
+	
+	
+	/* Les 2000 */
 	if (message.content.startsWith("$2000")){
 		if (message.content.substr("$2000".lenght)=="1"){
 			message.channel.send("Les 2000 sont beaux");
@@ -72,85 +68,73 @@ client.on("message", (message) => {
 			message.channel.send("LES 2000 SONT DEBILES");
 		}
 	}
-});
 
-/* Les 1999 */
-client.on("message", (message) => {
+	
+	/* Les 1999 */
 	if (message.content.startsWith("$1999")) {
 		message.channel.send("Les 1999, ces dieux :heart:", {
 			file : "./image/img_1999.gif"
 		});
 	}
-});
+	
 
-/* La dance */
-client.on("message", (message) => {
+	/* La dance */
 	if (message.content.startsWith("$dance")) {
 		message.channel.send("DANCE", {
 			file : "./image/img_dance" + alea() + ".gif"
 		});
 	}
-});
 
 
-/* La fête */
-client.on("message", (message) => {
+	/* La fête */
 	if (message.content.startsWith("$party")) {
 		message.channel.send("LA FETE", {
 			file : "./image/img_party" + alea() + ".gif"
 		});
 	}
-});
 
 
-/* Les 1998 */
-client.on("message", (message) => {
+	/* Les 1998 */
 	if (message.content.startsWith("$1998")) {
 		message.channel.send("Les 1998, c'est des Thugs :sunglasses:", {
 			file : "./image/img_1998.gif"
 		});
 	}
-});
 
 
-/* Images aléatoires quand on est triste */
-client.on("message", (message) => {
+	/* Images aléatoires quand on est triste */
 	if (message.content.startsWith("$triste")) {
 		message.channel.send("La tristesse", {
 			file : "./image/img_triste" + alea() + ".jpg"
 		});
 	}
-});
+	
 
-/* Images aléatoires quand on est JOJO */
-client.on("message", (message) => {
+	/* Images aléatoires quand on est JOJO */
 	if (message.content.startsWith("$jojo") || message.content.startsWith("$JOJO")) {
 		message.channel.send("SONO CHI NO SADAME", {
 			file : "./image/img_jojo" + alea() + ".jpg"
 		});
 	}
-});
+	
 
-/* Quand quelqu'un est pas content */
-client.on("message", (message) => {
+	/* Quand quelqu'un est pas content */
 	if (message.content.startsWith("$pascontent")) {
 		message.channel.send("", {
 			file : "./image/img_gohan1.gif"
 		});
 	}
-});
 
-/* Analyste */
-client.on("message", (message) => {
+	
+	/* Analyste */
 	if (message.content.startsWith("$analyste")) {
 		message.channel.send("Je suis analyste financier, je ne peux pas aller au Yemen !", {
 			file : ""
 		});
 	}
-});
 
-/* voir l'avatar des gens */
-client.on("message", (message) => {
+
+	/* voir l'avatar des gens */
 	if(message.content.startsWith("$avatar")) { //IF for the command.
 	    if(message.mentions.users.first()) { //Check if the message has a mention in it.
 		  let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
@@ -161,12 +145,9 @@ client.on("message", (message) => {
 		  message.reply("La personne mentionnée n'est pas trouvée :("); //Reply with a mention saying "Invalid user."
 	    }
 	}
-});
 
 
-
-/* Emote sur des gens */
-client.on("message", (message) => {
+	/* Emote sur des gens */
 	if(message.content.startsWith("$emote")) { //IF for the command.
 	    if(message.mentions.users.first()) { //Check if the message has a mention in it.
 		  let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
@@ -216,6 +197,13 @@ client.on("message", (message) => {
 		  message.reply("La personne mentionnée n'est pas trouvée :("); //Reply with a mention saying "Invalid user."
 	    }
 	}
+	
+	
+	/* Pour obtenir les commandes */
+	if (message.content.startsWith('$ALED')) {
+		message.author.sendMessage("Je viens t'aider !\n$ping -> renvoi pong\n$Gateau ou $gateau -> renvoi un délicieux gateau au chocolat\n$joie -> renvoi une image joyeuse\n$tristesse -> renvoi une triste image\n$dance -> renvoi un gif de danse\n$party -> renvoi un gif festif\n");
+	}
+	
 });
 
 
@@ -254,19 +242,11 @@ client.on("message", (message) => {
 
 
 client.on('message', message => {
-	if (msg.startsWith('coucou') || msg.startsWith('bonjour') || msg.startsWith('salut')) {
+	if (message.content.startsWith('coucou') || message.content.startsWith('bonjour') || message.content.startsWith('salut')) {
 		let user = message.member.user;
 		message.channel.send('COUCOU ' + user);
 	}
 });
-
-
-client.on('message', message => {
-	if (message.content.startsWith('$ALED')) {
-		message.author.sendMessage("Je viens t'aider !\n$ping -> renvoi pong\n$Gateau ou $gateau -> renvoi un délicieux gateau au chocolat\n$joie -> renvoi une image joyeuse\n$tristesse -> renvoi une triste image\n$dance -> renvoi un gif de danse\n$party -> renvoi un gif festif\n");
-	}
-});
-
 
 
 client.on('message', message => {
