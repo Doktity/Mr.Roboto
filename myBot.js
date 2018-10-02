@@ -205,7 +205,7 @@ client.on("message", (message) => {
 	
 	/* Pour obtenir les commandes */
 	if (msg.startsWith('$aled')) {
-		message.author.sendMessage("Je viens t'aider !\n$ping -> renvoi pong\n$Gateau ou $gateau -> renvoi un délicieux gateau au chocolat\n$joie -> renvoi une image joyeuse\n$tristesse -> renvoi une triste image\n$dance -> renvoi un gif de danse\n$party -> renvoi un gif festif\n");
+		message.author.sendMessage("Je viens t'aider !\n$ping -> renvoi pong\n$gateau -> renvoi un délicieux gateau au chocolat\n$joie -> renvoi une image joyeuse\n$triste -> renvoi une triste image\n$dance -> renvoi un gif de danse\n$party -> renvoi un gif festif\n$emote + le tag de quelqu'un -> renvoi un gif avec la mention du tag\n$avatar + le tag de quelqu'un -> renvoi l'avatar de la personne mentionnée\n$jojo -> renvoi une image JOJO\n$pascontent -> renvoi un gif qui montre ta colère\n$naze -> renvoi une image qui te nargue à la gueule\n$analyste -> renvoi un même interdit au Yemen\n");
 	}
 	
 });
