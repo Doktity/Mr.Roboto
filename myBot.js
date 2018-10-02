@@ -18,26 +18,30 @@ client.on("ready", () => {
 
 client.on("message", (message) => {
 	
+	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
+	msg = message.content.toLowerCase();
+	
+	
 	/* Le ping pong */
-	if (message.content.startsWith("$ping")) {
+	if (msg.startsWith("$ping")) {
   		message.channel.send("pong!");
 	}
 
 
 	/* Le gateau */
-	if (message.content.startsWith("$Gateau") || message.content.startsWith("$gateau")){
+	if (msg.startsWith("$gateau")) {
 		message.channel.send("au chocolat");
 	}
 
 	
 	/* Eric Tan */
-	if (message.content.startsWith("$Tan") || message.content.startsWith("$tan")){
+	if (msg.startsWith("$tan")) {
 		message.channel.send("HENRI TAN !! Nan je déconne évidemment je m'appelle Eric Tan.");
 	}
 
 	
 	/* Images aléatoires de Watanabe You */
-	if (message.content.startsWith("$you") && !(message.content.startsWith('$younes'))) {
+	if (msg.startsWith("$you")) {
 		message.channel.send("", {
 			file : "./image/img_you" + alea() + ".jpg"
 		});
@@ -45,7 +49,7 @@ client.on("message", (message) => {
 
 	
 	/* Quand quelqu'un est nul */
-	if (message.content.startsWith("$nul")) {
+	if (msg.startsWith("$nul")) {
 		message.channel.send("gros naze", {
 			file : "./image/img_naze.jpg"
 		});
@@ -53,7 +57,7 @@ client.on("message", (message) => {
 
 	
 	/* Images aléatoires quand on est content */
-	if (message.content.startsWith("$joie")) {
+	if (msg.startsWith("$joie")) {
 		message.channel.send("La joie", {
 			file : "./image/img_joie" + alea() + ".jpg"
 		});
@@ -61,7 +65,7 @@ client.on("message", (message) => {
 	
 	
 	/* Les 2000 */
-	if (message.content.startsWith("$2000")){
+	if (msg.startsWith("$2000")){
 		if (message.content.substr("$2000".lenght)=="1"){
 			message.channel.send("Les 2000 sont beaux");
 		}else{
@@ -71,7 +75,7 @@ client.on("message", (message) => {
 
 	
 	/* Les 1999 */
-	if (message.content.startsWith("$1999")) {
+	if (msg.startsWith("$1999")) {
 		message.channel.send("Les 1999, ces dieux :heart:", {
 			file : "./image/img_1999.gif"
 		});
@@ -79,7 +83,7 @@ client.on("message", (message) => {
 	
 
 	/* La dance */
-	if (message.content.startsWith("$dance")) {
+	if (msg.startsWith("$dance")) {
 		message.channel.send("DANCE", {
 			file : "./image/img_dance" + alea() + ".gif"
 		});
@@ -87,7 +91,7 @@ client.on("message", (message) => {
 
 
 	/* La fête */
-	if (message.content.startsWith("$party")) {
+	if (msg.startsWith("$party")) {
 		message.channel.send("LA FETE", {
 			file : "./image/img_party" + alea() + ".gif"
 		});
@@ -95,7 +99,7 @@ client.on("message", (message) => {
 
 
 	/* Les 1998 */
-	if (message.content.startsWith("$1998")) {
+	if (msg.startsWith("$1998")) {
 		message.channel.send("Les 1998, c'est des Thugs :sunglasses:", {
 			file : "./image/img_1998.gif"
 		});
@@ -103,7 +107,7 @@ client.on("message", (message) => {
 
 
 	/* Images aléatoires quand on est triste */
-	if (message.content.startsWith("$triste")) {
+	if (msg.startsWith("$triste")) {
 		message.channel.send("La tristesse", {
 			file : "./image/img_triste" + alea() + ".jpg"
 		});
@@ -111,7 +115,7 @@ client.on("message", (message) => {
 	
 
 	/* Images aléatoires quand on est JOJO */
-	if (message.content.startsWith("$jojo") || message.content.startsWith("$JOJO")) {
+	if (msg.startsWith("$jojo")) {
 		message.channel.send("SONO CHI NO SADAME", {
 			file : "./image/img_jojo" + alea() + ".jpg"
 		});
@@ -119,7 +123,7 @@ client.on("message", (message) => {
 	
 
 	/* Quand quelqu'un est pas content */
-	if (message.content.startsWith("$pascontent")) {
+	if (msg.startsWith("$pascontent")) {
 		message.channel.send("", {
 			file : "./image/img_gohan1.gif"
 		});
@@ -127,7 +131,7 @@ client.on("message", (message) => {
 
 	
 	/* Analyste */
-	if (message.content.startsWith("$analyste")) {
+	if (msg.startsWith("$analyste")) {
 		message.channel.send("Je suis analyste financier, je ne peux pas aller au Yemen !", {
 			file : ""
 		});
@@ -200,7 +204,7 @@ client.on("message", (message) => {
 	
 	
 	/* Pour obtenir les commandes */
-	if (message.content.startsWith('$ALED')) {
+	if (msg.startsWith('$aled')) {
 		message.author.sendMessage("Je viens t'aider !\n$ping -> renvoi pong\n$Gateau ou $gateau -> renvoi un délicieux gateau au chocolat\n$joie -> renvoi une image joyeuse\n$tristesse -> renvoi une triste image\n$dance -> renvoi un gif de danse\n$party -> renvoi un gif festif\n");
 	}
 	
