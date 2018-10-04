@@ -66,7 +66,7 @@ client.on("message", (message) => {
 	
 	/* Les 2000 */
 	if (msg.startsWith("$2000")){
-		message.channel.send("/ttsLES 2000 SONT DEBILES");
+		message.channel.send("/tts LES 2000 SONT DEBILES");
 	}
 
 	
