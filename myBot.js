@@ -27,7 +27,7 @@ client.on("message", (message) => {
 	let prefixe = '$';
 	
 	
-	/*if (msg.startsWith(prefixe + "cookie") {
+	if (msg.startsWith(prefixe + "cookie") {
 		let user = message.mentions.users.first();
 		sql.run("CREATE TABLE IF NOT EXISTS cookie (userId TEXT, envoi INTEGER, recu INTEGER)").then(() => {
 				sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [message.author.id, 0, 0]);
@@ -42,7 +42,7 @@ client.on("message", (message) => {
 		}).catch(() => {
 			console.error;
 		});
-	}*/
+	}
 	
 	/* Le ping pong */
 	if (msg.startsWith(prefixe + "ping")) {
