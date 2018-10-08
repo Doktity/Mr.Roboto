@@ -1,7 +1,7 @@
 const Discord = require("discord.js");		//Pour utiliser la librairie discord.js
 const ytdl = require('ytdl-core');
 const fs = require('fs');
-/*const sql = require('sqlite');
+const sql = require('sqlite');
 sql.open("./cookie.sqlite");*/
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 10;				// Nombre d'images pour le générateur de valeur aléatoire
@@ -27,7 +27,7 @@ client.on("message", (message) => {
 	let prefixe = '$';
 	
 	
-	/*if (msg.startsWith(prefixe + "cookie") {
+	if (msg.startsWith(prefixe + "cookie") {
 		let user = message.mentions.users.first();
 		sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
 			if (!row) {
