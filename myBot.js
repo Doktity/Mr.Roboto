@@ -27,25 +27,35 @@ client.on("message", (message) => {
 	let prefixe = '$';
 	
 	
-	
-	sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
-		if (!row) {
-			sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [message.author.id, 0, 0]);
-		} else {
-			if (msg.startsWith(prefixe + "cookie") {
-				let user = message.mentions.users.first();
-				sql.run(`UPDATE scores SET envoi = ${row.envoi + 1}, WHERE userId = ${message.author.id}`);
-				sql.run(`UPDATE scores SET recu = ${row.recu + 1}, WHERE userId = $user`);
-				message.reply("a envoyé un cookie à" + user + "\nMmmmh, c'est bon :yum:, il en a déjà reçu ${row.recu} !");
+	if (msg.startsWith(prefixe + "cookie") {
+		let user = message.mentions.users.first();
+		sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+			if (!row) {
+				sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [message.author.id, 0, 0]);
+			} else {
+					sql.run(`UPDATE scores SET envoi = ${row.envoi + 1}, WHERE userId = ${message.author.id}`);
+					message.reply("a envoyé un cookie à" + user + "\nNombre de cookies envoyés : ${row.envoi}");
 			}
-		}
-	}).catch(() => {
-		console.error;
-		sql.run("CREATE TABLE IF NOT EXISTS cookie (userId TEXT, envoi INTEGER, recu INTEGER)").then(() => {
-			sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [message.author.id, 0, 0]);
+		}).catch(() => {
+			console.error;
+			sql.run("CREATE TABLE IF NOT EXISTS cookie (userId TEXT, envoi INTEGER, recu INTEGER)").then(() => {
+				sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [message.author.id, 0, 0]);
+			});
 		});
-	});
-	
+		sql.get(`SELECT * FROM scores WHERE userId ="${user.id}"`).then(row => {
+			if (!row) {
+				sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [user.id, 0, 0]);
+			} else {
+					sql.run(`UPDATE scores SET envoi = ${row.recu + 1}, WHERE userId = ${user.id}`);
+					message.send(user + ", tu as reçu un cookie ! :yum:\nNombre de cookies reçus : ${row.recu}");
+			}
+		}).catch(() => {
+			console.error;
+			sql.run("CREATE TABLE IF NOT EXISTS cookie (userId TEXT, envoi INTEGER, recu INTEGER)").then(() => {
+				sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [user.id, 0, 0]);
+			});
+		});
+	}
 	
 	/* Le ping pong */
 	if (msg.startsWith(prefixe + "ping")) {
