@@ -36,7 +36,7 @@ client.on("message", (message) => {
 			if (!row) {
 				sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [message.author.id, 0, 0]);
 			} else {
-					sql.run(`UPDATE scores SET envoi = ${row.envoi + 1}, WHERE userId = ${message.author.id}`);
+					sql.run(`UPDATE cookie SET envoi = ${row.envoi + 1}, WHERE userId = ${message.author.id}`);
 					message.reply("a envoyé un cookie à" + user + "\nNombre de cookies envoyés : ${row.envoi}");
 			}
 		}).catch(() => {
