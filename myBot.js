@@ -2,7 +2,7 @@ const Discord = require("discord.js");		//Pour utiliser la librairie discord.js
 const ytdl = require('ytdl-core');
 const fs = require('fs');
 const sql = require('sqlite');
-sql.open("./score.sqlite");
+sql.open("./cookie.sqlite");
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 10;				// Nombre d'images pour le générateur de valeur aléatoire
 const streamOptions = { seek : 0, volume : 5};
@@ -36,7 +36,7 @@ client.on("message", (message) => {
 				let user = message.mentions.users.first();
 				sql.run(`UPDATE scores SET envoi = ${row.envoi + 1}, WHERE userId = ${message.author.id}`);
 				sql.run(`UPDATE scores SET recu = ${row.recu + 1}, WHERE userId = $user`);
-				message.reply("a envoyé un cookie à" + user + "\nMmmmh, c'est bon :yum:");
+				message.reply("a envoyé un cookie à" + user + "\nMmmmh, c'est bon :yum:, il en a déjà reçu ${row.recu} !");
 			}
 		}
 	}).catch(() => {
