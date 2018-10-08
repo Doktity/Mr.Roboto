@@ -20,22 +20,12 @@ client.on("message", (message) => {
 	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
-	
-	
-	
-	let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
-	if(!prefixes[message.guild.id]){
-		prefixes[message.guild.id] = {
-			prefixes: botconfig.prefix;
-		};
-	}
-
-	let prefixe = prefixes[message.guild.id].prefixes;
+	let prefixe = '$';
 	
 	
 	/* Le ping pong */
-	if (msg.startsWith("$ping")) {
+	if (msg.startsWith(prefixe + "ping")) {
   		message.channel.send("pong!");
 	}
 
