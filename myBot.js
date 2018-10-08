@@ -1,9 +1,12 @@
 const Discord = require("discord.js");		//Pour utiliser la librairie discord.js
 const ytdl = require('ytdl-core');
 const fs = require('fs');
+const sql = require('sqlite');
+sql.open("./score.sqlite");
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 10;				// Nombre d'images pour le générateur de valeur aléatoire
 const streamOptions = { seek : 0, volume : 5};
+
 
 /*Fonction Aléatoire pour avoir des images random */
 function alea(){
@@ -22,6 +25,26 @@ client.on("message", (message) => {
 	msg = message.content.toLowerCase();
 
 	let prefixe = '$';
+	
+	
+	
+	sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+		if (!row) {
+			sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [message.author.id, 0, 0]);
+		} else {
+			if (msg.startsWith(prefixe + "cookie") {
+				let user = message.mentions.users.first();
+				sql.run(`UPDATE scores SET envoi = ${row.envoi + 1}, WHERE userId = ${message.author.id}`);
+				sql.run(`UPDATE scores SET recu = ${row.recu + 1}, WHERE userId = $user`);
+				message.reply("a envoyé un cookie à" + user + "\nMmmmh, c'est bon :yum:");
+			}
+		}
+	}).catch(() => {
+		console.error;
+		sql.run("CREATE TABLE IF NOT EXISTS cookie (userId TEXT, envoi INTEGER, recu INTEGER)").then(() => {
+			sql.run("INSERT INTO cookie (userId, envoi, recu) VALUES (?, ?, ?)", [message.author.id, 0, 0]);
+		});
+	});
 	
 	
 	/* Le ping pong */
