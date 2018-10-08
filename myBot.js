@@ -27,7 +27,7 @@ client.on("message", (message) => {
 
 	let prefixe = '$';
 	
-	******
+	/******/
 		sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
     if (!row) {
       sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
@@ -69,7 +69,7 @@ client.on("message", (message) => {
 		
 		
 		
-		**********
+		/**********/
 	
 	
 	/*if (msg.startsWith(prefixe + "cookie") {
