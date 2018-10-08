@@ -16,6 +16,17 @@ client.on("ready", () => {
 });
 
 
+let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+
+if(!prefixes[message.guild.id]){
+	prefixes[message.guild.id] = {
+		prefixes: botconfig.prefix;
+	};
+}
+
+let prefixe = prefixes[message.guild.id].prefixes;
+
+
 client.on("message", (message) => {
 	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
