@@ -210,41 +210,6 @@ client.on("message", (message) => {
 	
 });
 
-
-// J'AI TENTER DES TRUCS MES CA FONCTIONNE PAS :'(
-
-
-/* Interaction dans un channel audio */
-/*client.on('message', message => {
-	if (message.content.startsWith('$faitpeterleson')) {
-	// On récupère le premier channel audio du serveur
-  		let voiceChannel = message.member.channels;
-     		.filter(function (channel) { return channel.type === 'voice' });
-		.first();
-  		// On récupère les arguments de la commande 
- 	 	// il faudrait utiliser une expression régulière pour valider le lien youtube
-   		let args = message.content.split('http://www.youtube.com/*');
-   		// On rejoint le channel audio
-    		voiceChannel.join();
-      		.then(function (connection) {
-        		// On démarre un stream à partir de la vidéo youtube
-       			let stream = YoutubeStream(args[1]);
-        		stream.on('error', function () {
-          			message.reply("Je n'ai pas réussi à lire cette vidéo :(");
-          			connection.disconnect();
-        		});
-        		// On envoie le stream au channel audio
-        		// Il faudrait ici éviter les superpositions (envoie de plusieurs vidéo en même temps)
-        		connection
-          		.playStream(stream);
-          		.on('end', function () {
-            			connection.disconnect();
-          		});
-      		})
- 	}
-});*/
-
-
 client.on('message', message => {
 	if (message.content.startsWith('coucou') || message.content.startsWith('bonjour') || message.content.startsWith('salut')) {
 		let user = message.member.user;
