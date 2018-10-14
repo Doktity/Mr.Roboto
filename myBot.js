@@ -128,6 +128,38 @@ client.on("message", (message) => {
 			file : "./image/img_gohan1.gif"
 		});
 	}
+	
+	
+	/* images aléatoires quand on est déclenché 
+	*  les gif ont un nombre paire, et les images un nombre impaire */
+	if (msg.startsWith("$triggered")) {
+		res = alea();
+		if (res % 2 == 0) {
+			message.channel.send("", {
+				file : "./image/img_triggered" + res + ".gif";
+			});
+		} else {
+			message.channel.send("", {
+				file : "./image/img_triggered" + res + ".jpg";
+			});
+		}
+	}
+	
+	
+	/* images aléatoires quand on fait le beau
+	*  les gif ont un nombre paire, et les images un nombre impaire */
+	if (msg.startsWith("$beau")) {
+		res = alea();
+		if (res % 2 == 0) {
+			message.channel.send("", {
+				file : "./image/img_smug" + res + ".gif";
+			});
+		} else {
+			message.channel.send("", {
+				file : "./image/img_smug" + res + ".jpg";
+			});
+		}
+	}
 
 	
 	/* Analyste */
