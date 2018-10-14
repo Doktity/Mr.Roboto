@@ -138,7 +138,7 @@ client.on("message", (message) => {
 	
 	/* images aléatoires quand on est déclenché 
 	*  les gif ont un nombre paire, et les images un nombre impaire */
-	/*if (msg.startsWith(prefixe + "triggered")) {
+	if (msg.startsWith(prefixe + "triggered")) {
 		res = alea();
 		if (res % 2 == 0) {
 			message.channel.send("", {
@@ -154,7 +154,7 @@ client.on("message", (message) => {
 	
 	/* images aléatoires quand on fait le beau
 	*  les gif ont un nombre paire, et les images un nombre impaire */
-	/*if (msg.startsWith(prefixe + "beau")) {
+	if (msg.startsWith(prefixe + "beau")) {
 		res = alea();
 		if (res % 2 == 0) {
 			message.channel.send("", {
