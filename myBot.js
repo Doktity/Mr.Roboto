@@ -34,19 +34,19 @@ client.on("message", (message) => {
 
 
 	/* Le gateau */
-	if (msg.startsWith("$gateau")) {
+	if (msg.startsWith(prefixe + "gateau")) {
 		message.channel.send("au chocolat");
 	}
 
 	
 	/* Eric Tan */
-	if (msg.startsWith("$tan")) {
+	if (msg.startsWith(prefixe + "tan")) {
 		message.channel.send("HENRI TAN !! Nan je déconne évidemment je m'appelle Eric Tan.");
 	}
 	
 	
 	/* Les 2000 */
-	if (msg.startsWith("$2000")){
+	if (msg.startsWith(prefixe + "2000")){
 		message.channel.send("LES 2000 SONT DEBILES", {
 			tts: true
 		});
@@ -54,7 +54,7 @@ client.on("message", (message) => {
 
 	
 	/* Les 1999 */
-	if (msg.startsWith("$1999")) {
+	if (msg.startsWith(prefixe + "1999")) {
 		message.channel.send("Les 1999, ces dieux :heart:", {
 			file : "./image/img_1999.gif"
 		});
@@ -62,7 +62,7 @@ client.on("message", (message) => {
 	
 	
 	/* Les 1998 */
-	if (msg.startsWith("$1998")) {
+	if (msg.startsWith(prefixe + "1998")) {
 		message.channel.send("Les 1998, c'est des Thugs :sunglasses:", {
 			file : "./image/img_1998.gif"
 		});
@@ -70,7 +70,7 @@ client.on("message", (message) => {
 	
 	
 	/* Quand quelqu'un est pas content */
-	if (msg.startsWith("$pascontent")) {
+	if (msg.startsWith(prefixe + "pascontent")) {
 		message.channel.send("", {
 			file : "./image/img_gohan1.gif"
 		});
@@ -78,7 +78,7 @@ client.on("message", (message) => {
 	
 	
 	/* Quand quelqu'un est nul */
-	if (msg.startsWith("$nul")) {
+	if (msg.startsWith(prefixe + "nul")) {
 		message.channel.send("gros naze", {
 			file : "./image/img_naze.jpg"
 		});
@@ -88,7 +88,7 @@ client.on("message", (message) => {
 	// LES IMAGES ALÉATOIRES
 	
 	/* Images aléatoires de Watanabe You */
-	if (msg.startsWith("$you")) {
+	if (msg.startsWith(prefixe + "you")) {
 		message.channel.send("", {
 			file : "./image/img_you" + alea() + ".jpg"
 		});
@@ -96,7 +96,7 @@ client.on("message", (message) => {
 
 	
 	/* Images aléatoires quand on est content */
-	if (msg.startsWith("$joie")) {
+	if (msg.startsWith(prefixe + "joie")) {
 		message.channel.send("La joie", {
 			file : "./image/img_joie" + alea() + ".jpg"
 		});
@@ -104,7 +104,7 @@ client.on("message", (message) => {
 	
 
 	/* La dance */
-	if (msg.startsWith("$dance")) {
+	if (msg.startsWith(prefixe + "dance")) {
 		message.channel.send("DANCE", {
 			file : "./image/img_dance" + alea() + ".gif"
 		});
@@ -112,7 +112,7 @@ client.on("message", (message) => {
 
 
 	/* La fête */
-	if (msg.startsWith("$party")) {
+	if (msg.startsWith(prefixe + "party")) {
 		message.channel.send("LA FETE", {
 			file : "./image/img_party" + alea() + ".gif"
 		});
@@ -120,7 +120,7 @@ client.on("message", (message) => {
 
 
 	/* Images aléatoires quand on est triste */
-	if (msg.startsWith("$triste")) {
+	if (msg.startsWith(prefixe + "triste")) {
 		message.channel.send("La tristesse", {
 			file : "./image/img_triste" + alea() + ".jpg"
 		});
@@ -128,7 +128,7 @@ client.on("message", (message) => {
 	
 
 	/* Images aléatoires quand on est JOJO */
-	if (msg.startsWith("$jojo")) {
+	if (msg.startsWith(prefixe + "jojo")) {
 		message.channel.send("SONO CHI NO SADAME", {
 			file : "./image/img_jojo" + alea() + ".jpg"
 		});
@@ -137,7 +137,7 @@ client.on("message", (message) => {
 	
 	/* images aléatoires quand on est déclenché 
 	*  les gif ont un nombre paire, et les images un nombre impaire */
-	if (msg.startsWith("$triggered")) {
+	if (msg.startsWith(prefixe + "triggered")) {
 		res = alea();
 		if (res % 2 == 0) {
 			message.channel.send("", {
@@ -153,7 +153,7 @@ client.on("message", (message) => {
 	
 	/* images aléatoires quand on fait le beau
 	*  les gif ont un nombre paire, et les images un nombre impaire */
-	if (msg.startsWith("$beau")) {
+	if (msg.startsWith(prefixe + "beau")) {
 		res = alea();
 		if (res % 2 == 0) {
 			message.channel.send("", {
@@ -170,7 +170,7 @@ client.on("message", (message) => {
 	// Les autres trucs un peu plus compliqué
 	
 	/* voir l'avatar des gens */
-	if(message.content.startsWith("$avatar")) { //IF for the command.
+	if(message.content.startsWith(prefixe + "avatar")) { //IF for the command.
 	    if(message.mentions.users.first()) { //Check if the message has a mention in it.
 		  let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
 		  let output = user.username + user.discriminator /*Username and Discriminator*/ +
@@ -183,7 +183,7 @@ client.on("message", (message) => {
 
 
 	/* Emote sur des gens */
-	if(message.content.startsWith("$emote")) { //IF for the command.
+	if(message.content.startsWith(prefixe + "emote")) { //IF for the command.
 	    if(message.mentions.users.first()) { //Check if the message has a mention in it.
 		  let user = message.mentions.users.first(); //Since message.mentions.users returns a collection; we must use the first() method to get the first in the collection.
 		  res = alea();
@@ -235,7 +235,7 @@ client.on("message", (message) => {
 	
 	
 	/* Pour obtenir les commandes */
-	if (msg.startsWith('$aled')) {
+	if (msg.startsWith(prefixe + "aled")) {
 		message.author.sendMessage("Je viens t'aider !\n$ping -> renvoi pong\n$gateau -> renvoi un délicieux gateau au chocolat\n$joie -> renvoi une image joyeuse\n$triste -> renvoi une triste image\n$dance -> renvoi un gif de danse\n$party -> renvoi un gif festif\n$emote + le tag de quelqu'un -> renvoi un gif avec la mention du tag\n$avatar + le tag de quelqu'un -> renvoi l'avatar de la personne mentionnée\n$jojo -> renvoi une image JOJO\n$pascontent -> renvoi un gif qui montre ta colère\n$nul -> renvoi une image qui te nargue à la gueule\n$analyste -> renvoi un même interdit au Yemen\n");
 	}
 	
@@ -250,7 +250,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-	if (message.content.startsWith('$play')) {
+	if (message.content.startsWith(prefixe + "play")) {
 		console.log('Got a song request!');
 		const channel = message.member.voiceChannel;
 		if (!channel) {
