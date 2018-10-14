@@ -140,7 +140,7 @@ client.on("message", (message) => {
 	*  les gif ont un nombre paire, et les images un nombre impaire */
 	if (msg.startsWith(prefixe + "triggered")) {
 		res = alea();
-		if (res % 2 == 0) {
+		if ((res % 2) === 0) {
 			message.channel.send("", {
 				file : "./image/img_triggered" + res + ".gif";
 			});
@@ -156,7 +156,7 @@ client.on("message", (message) => {
 	*  les gif ont un nombre paire, et les images un nombre impaire */
 	if (msg.startsWith(prefixe + "beau")) {
 		res = alea();
-		if (res % 2 == 0) {
+		if ((res % 2) === 0) {
 			message.channel.send("", {
 				file : "./image/img_smug" + res + ".gif";
 			});
