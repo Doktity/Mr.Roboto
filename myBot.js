@@ -17,12 +17,13 @@ client.on("ready", () => {
 });
 
 
+let prefixe = "$";
+
+
 client.on("message", (message) => {
 	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
-
-	let prefixe = "$";
 	
 	
 	// LES INTÉRACTIONS SIMPLES
