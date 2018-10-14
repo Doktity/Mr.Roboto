@@ -45,14 +45,6 @@ client.on("message", (message) => {
 	}
 	
 	
-	/* Quand quelqu'un est nul */
-	if (msg.startsWith("$nul")) {
-		message.channel.send("gros naze", {
-			file : "./image/img_naze.jpg"
-		});
-	}
-	
-	
 	/* Les 2000 */
 	if (msg.startsWith("$2000")){
 		message.channel.send("LES 2000 SONT DEBILES", {
@@ -81,6 +73,14 @@ client.on("message", (message) => {
 	if (msg.startsWith("$pascontent")) {
 		message.channel.send("", {
 			file : "./image/img_gohan1.gif"
+		});
+	}
+	
+	
+	/* Quand quelqu'un est nul */
+	if (msg.startsWith("$nul")) {
+		message.channel.send("gros naze", {
+			file : "./image/img_naze.jpg"
 		});
 	}
 	
