@@ -142,11 +142,11 @@ client.on("message", (message) => {
 		res = alea();
 		if ((res % 2) === 0) {
 			message.channel.send("", {
-				file : "./image/img_triggered" + res + ".gif";
+				file : "./image/img_triggered" + res + ".gif"
 			});
 		} else {
 			message.channel.send("", {
-				file : "./image/img_triggered" + res + ".jpg";
+				file : "./image/img_triggered" + res + ".jpg"
 			});
 		}
 	}
@@ -158,11 +158,11 @@ client.on("message", (message) => {
 		res = alea();
 		if ((res % 2) === 0) {
 			message.channel.send("", {
-				file : "./image/img_smug" + res + ".gif";
+				file : "./image/img_smug" + res + ".gif"
 			});
 		} else {
 			message.channel.send("", {
-				file : "./image/img_smug" + res + ".jpg";
+				file : "./image/img_smug" + res + ".jpg"
 			});
 		}
 	}
