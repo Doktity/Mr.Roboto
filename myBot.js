@@ -23,7 +23,10 @@ client.on("message", (message) => {
 	msg = message.content.toLowerCase();
 
 	let prefixe = "$";
-
+	
+	
+	// LES INTÉRACTIONS SIMPLES
+	
 	/* Le ping pong */
 	if (msg.startsWith(prefixe + "ping")) {
   		message.channel.send("pong!");
@@ -40,28 +43,12 @@ client.on("message", (message) => {
 	if (msg.startsWith("$tan")) {
 		message.channel.send("HENRI TAN !! Nan je déconne évidemment je m'appelle Eric Tan.");
 	}
-
 	
-	/* Images aléatoires de Watanabe You */
-	if (msg.startsWith("$you")) {
-		message.channel.send("", {
-			file : "./image/img_you" + alea() + ".jpg"
-		});
-	}
-
 	
 	/* Quand quelqu'un est nul */
 	if (msg.startsWith("$nul")) {
 		message.channel.send("gros naze", {
 			file : "./image/img_naze.jpg"
-		});
-	}
-
-	
-	/* Images aléatoires quand on est content */
-	if (msg.startsWith("$joie")) {
-		message.channel.send("La joie", {
-			file : "./image/img_joie" + alea() + ".jpg"
 		});
 	}
 	
@@ -78,6 +65,40 @@ client.on("message", (message) => {
 	if (msg.startsWith("$1999")) {
 		message.channel.send("Les 1999, ces dieux :heart:", {
 			file : "./image/img_1999.gif"
+		});
+	}
+	
+	
+	/* Les 1998 */
+	if (msg.startsWith("$1998")) {
+		message.channel.send("Les 1998, c'est des Thugs :sunglasses:", {
+			file : "./image/img_1998.gif"
+		});
+	}
+	
+	
+	/* Quand quelqu'un est pas content */
+	if (msg.startsWith("$pascontent")) {
+		message.channel.send("", {
+			file : "./image/img_gohan1.gif"
+		});
+	}
+	
+	
+	// LES IMAGES ALÉATOIRES
+	
+	/* Images aléatoires de Watanabe You */
+	if (msg.startsWith("$you")) {
+		message.channel.send("", {
+			file : "./image/img_you" + alea() + ".jpg"
+		});
+	}
+
+	
+	/* Images aléatoires quand on est content */
+	if (msg.startsWith("$joie")) {
+		message.channel.send("La joie", {
+			file : "./image/img_joie" + alea() + ".jpg"
 		});
 	}
 	
@@ -98,14 +119,6 @@ client.on("message", (message) => {
 	}
 
 
-	/* Les 1998 */
-	if (msg.startsWith("$1998")) {
-		message.channel.send("Les 1998, c'est des Thugs :sunglasses:", {
-			file : "./image/img_1998.gif"
-		});
-	}
-
-
 	/* Images aléatoires quand on est triste */
 	if (msg.startsWith("$triste")) {
 		message.channel.send("La tristesse", {
@@ -118,14 +131,6 @@ client.on("message", (message) => {
 	if (msg.startsWith("$jojo")) {
 		message.channel.send("SONO CHI NO SADAME", {
 			file : "./image/img_jojo" + alea() + ".jpg"
-		});
-	}
-	
-
-	/* Quand quelqu'un est pas content */
-	if (msg.startsWith("$pascontent")) {
-		message.channel.send("", {
-			file : "./image/img_gohan1.gif"
 		});
 	}
 	
@@ -161,15 +166,9 @@ client.on("message", (message) => {
 		}
 	}
 
+
+	// Les autres trucs un peu plus compliqué
 	
-	/* Analyste */
-	if (msg.startsWith("$analyste")) {
-		message.channel.send("Je suis analyste financier, je ne peux pas aller au Yemen !", {
-			file : ""
-		});
-	}
-
-
 	/* voir l'avatar des gens */
 	if(message.content.startsWith("$avatar")) { //IF for the command.
 	    if(message.mentions.users.first()) { //Check if the message has a mention in it.
