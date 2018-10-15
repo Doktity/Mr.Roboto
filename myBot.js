@@ -15,9 +15,11 @@ function alea(){
 let prefixe = "$";
 
 /* Quand la console est prête */
-client.on("ready", () => {
-	console.log("I am ready!");
-	client.user.setActivity("$aled", {type: "WATCHING"})
+client.on('ready', async () => {
+	console.log(${client.user.username} est en ligne!)
+	client.user.setActivity("+>help", {type: "WATCHING"})
+		.then(() => console.log('Jeu mis en place avec succès'))
+		.catch(console.error)
 });
 
 
