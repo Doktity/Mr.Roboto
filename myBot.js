@@ -17,9 +17,7 @@ let prefixe = "$";
 /* Quand la console est prête */
 client.on("ready", () => {
 	console.log("I am ready!");
-	client.user.setActivity(prefixe + "aled", {type: "WATCHING"}) 
-	.then(() => console.log('Jeu mis en place avec succès')) 
-	.catch(console.error)
+	client.user.setActivity(prefixe + "aled", {type: "WATCHING"})
 });
 
 
