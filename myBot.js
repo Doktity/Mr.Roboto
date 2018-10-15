@@ -17,7 +17,7 @@ let prefixe = "$";
 /* Quand la console est prête */
 client.on("ready", () => {
 	console.log("I am ready!");
-	client.user.setActivity(prefixe + "aled", {type: "WATCHING"})
+	client.user.setActivity("$aled", {type: "WATCHING"})
 });
 
 
