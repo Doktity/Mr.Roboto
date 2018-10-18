@@ -87,6 +87,12 @@ client.on("message", (message) => {
 		});
 	}
 	
+	/* -18 */
+	if (msg.startsWith(prefixe + "carlos")) {
+		message.channel.send("Ca fait crack crack ici !", {
+			file : "./image/img_crack.gif"
+		});
+	}
 	
 	// LES IMAGES ALÉATOIRES
 	
