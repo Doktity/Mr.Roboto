@@ -32,7 +32,8 @@ client.on("message", (message) => {
 	
 	/* Bannissement du mot " roux " */
 	if(msg.includes("roux")){
-		msg.delete(1000);
+		message.delete(1000);
+		message.channel.send("Les roux sont gentils à défaut d'être beaux :smile:");
 	}
 	
 	/* Le ping pong */
