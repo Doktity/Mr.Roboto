@@ -27,12 +27,13 @@ client.on("message", (message) => {
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
 	
-	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"];
+	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
 	
 	
 	// LES INTÉRACTIONS SIMPLES
 	
 	/* Bannissement du mot " roux " */
+	/* Quand on trouve le mot à l'intérieur du message on le détruit */
 	let trouver = false;
 	for (var i in banlist){
 		if(msg.includes(banlist[i])){
