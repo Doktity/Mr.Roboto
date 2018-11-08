@@ -39,7 +39,7 @@ client.on("message", (message) => {
 			trouver = true;
 		}
 	}
-	if(trouver == true){
+	if(trouver){
 		message.delete();
 			message.reply(" ce mot est bannit. ")
 				.then(msg => msg.delete(10000));
