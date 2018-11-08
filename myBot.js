@@ -30,6 +30,11 @@ client.on("message", (message) => {
 	
 	// LES INTÉRACTIONS SIMPLES
 	
+	/* Bannissement du mot " roux " */
+	if(msg("roux")){
+		msg.delete(1000);
+	}
+	
 	/* Le ping pong */
 	if (msg.startsWith(prefixe + "ping")) {
   		message.channel.send("pong!");
