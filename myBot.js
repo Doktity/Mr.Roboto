@@ -39,7 +39,7 @@ client.on("message", (message) => {
 			trouver = true;
 		}
 	}
-	if(trouver){
+	if(trouver && message.channel.id === "383920747195924490"){
 		message.delete();
 			message.reply(" ce mot est bannit. ")
 				.then(msg => msg.delete(10000));
