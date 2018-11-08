@@ -40,7 +40,7 @@ client.on("message", (message) => {
 			trouver = true;
 		}
 	}
-	if(trouver && message.guild.id === "383920747195924490"){
+	if(trouver && message.guild.id === "383920747195924490"){ // Bannir uniquement sur le serveur des conios
 		message.delete();
 			message.reply(" ce mot est bannit. ")
 				.then(msg => msg.delete(10000));
