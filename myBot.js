@@ -34,7 +34,7 @@ client.on("message", (message) => {
 	
 	/* Bannissement du mot " roux " */
 	for (var i in banlist){
-		if(msg.includes(banlist[i] && msg.author.id != "426472037318524943"){
+		if(msg.includes(banlist[i] && sender.id != "426472037318524943"){
 			message.delete();
 			message.reply(" ce mot est bannit. ")
 				.then(msg => msg.delete(10000));
