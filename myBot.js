@@ -34,8 +34,7 @@ client.on("message", (message) => {
 	if(msg.includes("roux") || msg.includes("r o u x") || msg.includes("r0ux") || msg.includes("r.o.u.x")){
 		message.delete();
 		message.reply(" ce mot est bannit. ")
-			.then(msg =>
-			      msg.delete(1000));
+			.then(msg => msg.delete(10000));
 	}
 	
 	/* Le ping pong */
