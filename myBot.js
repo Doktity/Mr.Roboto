@@ -31,7 +31,7 @@ client.on("message", (message) => {
 	// LES INTÉRACTIONS SIMPLES
 	
 	/* Bannissement du mot " roux " */
-	if(msg("roux")){
+	if(msg.includes("roux")){
 		msg.delete(1000);
 	}
 	
