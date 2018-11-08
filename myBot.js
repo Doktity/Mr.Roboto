@@ -14,8 +14,6 @@ function alea(){
 
 let prefixe = "$";
 
-let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"];
-
 /* Quand la console est prête */
 client.on('ready', async () => {
 	client.user.setActivity("$aled", {type: "WATCHING"})
@@ -28,6 +26,8 @@ client.on("message", (message) => {
 	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
+	
+	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"];
 	
 	
 	// LES INTÉRACTIONS SIMPLES
