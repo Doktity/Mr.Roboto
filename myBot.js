@@ -35,7 +35,7 @@ client.on("message", (message) => {
 		message.delete();
 		message.reply(" ce mot est bannit. ")
 			.then(msg =>
-			      msg.delete(1000););
+			      msg.delete(1000));
 	}
 	
 	/* Le ping pong */
