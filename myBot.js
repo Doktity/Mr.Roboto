@@ -31,9 +31,11 @@ client.on("message", (message) => {
 	// LES INTÉRACTIONS SIMPLES
 	
 	/* Bannissement du mot " roux " */
-	if(msg.includes("roux") || msg.includes("r o u x") || msg.includes("r0ux") || msg.includes("rou")){
+	if(msg.includes("roux") || msg.includes("r o u x") || msg.includes("r0ux") || msg.includes("r.o.u.x")){
 		message.delete();
-		message.reply(" ce mot est bannit. ");
+		message.reply(" ce mot est bannit. ")
+			.then(msg =>
+			      msg.delete(1000););
 	}
 	
 	/* Le ping pong */
