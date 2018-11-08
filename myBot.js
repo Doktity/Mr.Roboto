@@ -32,7 +32,7 @@ client.on("message", (message) => {
 	
 	/* Bannissement du mot " roux " */
 	if(msg.includes("roux")){
-		message.delete(1000);
+		message.delete(1);
 		message.channel.send("Les roux sont gentils à défaut d'être beaux :smile:");
 	}
 	
