@@ -14,6 +14,8 @@ function alea(){
 
 let prefixe = "$";
 
+let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"];
+
 /* Quand la console est prête */
 client.on('ready', async () => {
 	client.user.setActivity("$aled", {type: "WATCHING"})
@@ -31,10 +33,12 @@ client.on("message", (message) => {
 	// LES INTÉRACTIONS SIMPLES
 	
 	/* Bannissement du mot " roux " */
-	if(msg.includes("roux") || msg.includes("r o u x") || msg.includes("r0ux") || msg.includes("r.o.u.x")){
-		message.delete();
-		message.reply(" ce mot est bannit. ")
-			.then(msg => msg.delete(10000));
+	for (var i in banlist){
+		if(msg.includes(banlist[i] && msg.author.id != "426472037318524943"){
+			message.delete();
+			message.reply(" ce mot est bannit. ")
+				.then(msg => msg.delete(10000));
+		}
 	}
 	
 	/* Le ping pong */
