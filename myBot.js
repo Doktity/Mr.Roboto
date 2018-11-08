@@ -33,12 +33,16 @@ client.on("message", (message) => {
 	// LES INTÉRACTIONS SIMPLES
 	
 	/* Bannissement du mot " roux " */
+	let trouver = false;
 	for (var i in banlist){
 		if(msg.includes(banlist[i]) && sender.id != "426472037318524943"){
-			message.delete();
+			trouver = true;
+		}
+	}
+	if(trouver == true){
+		message.delete();
 			message.reply(" ce mot est bannit. ")
 				.then(msg => msg.delete(10000));
-		}
 	}
 	
 	/* Le ping pong */
