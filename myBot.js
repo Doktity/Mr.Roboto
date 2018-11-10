@@ -47,7 +47,8 @@ client.on("message", (message) => {
 	
 	/* Ajout d'un mot banni */
 	if (msg.startsWith(prefixe + "addban")) {
-		fs.writeFile("./banlist.json", JSON.stringify(arg[0]), (err) => {
+		let mot = arg[0];
+		fs.writeFile("./banlist.json", JSON.stringify(mot), (err) => {
 			if (err){
 				message.reply("une erreur est survenue lors de l'ajout du mot.");
 			} else {
