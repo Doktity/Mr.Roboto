@@ -25,7 +25,8 @@ client.on("message", (message) => {
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
 	
-	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
+	//let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
+	var banlist = JSON.parse(fs.readFileSync("./banlist.json", 'utf-8'));
 	
 	
 	// LES INTÉRACTIONS SIMPLES
@@ -38,10 +39,21 @@ client.on("message", (message) => {
 			trouver = true;
 		}
 	}
-	if(trouver && message.guild.id === "383920747195924490"){ // Bannir uniquement sur le serveur des conios
+	if (trouver && message.guild.id === "383920747195924490"){ // Bannir uniquement sur le serveur des conios
 		message.delete();
 			message.reply(" ce mot est bannit. ")
 				.then(msg => msg.delete(10000));
+	}
+	
+	/* Ajout d'un mot banni */
+	if (msg.startsWith(prefixe + "addban")) {
+		fs.writeFile("./banlist.json", JSON.stringify(arg[0]), (err) => {
+			if (err){
+				message.reply("une erreur est survenue lors de l'ajout du mot.");
+			} else {
+				message.reply("le mot a bien été enregistré.");
+			}
+		});
 	}
 	
 	/* Le ping pong */
