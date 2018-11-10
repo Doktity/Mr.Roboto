@@ -17,8 +17,6 @@ let prefixe = "$";
 /* Quand la console est prête */
 client.on('ready', async () => {
 	client.user.setActivity("$aled", {type: "WATCHING"})
-		.then(() => console.log('Jeu mis en place avec succès'))
-		.catch(console.error)
 });
 
 
