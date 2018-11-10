@@ -25,8 +25,8 @@ client.on("message", (message) => {
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
 	
-	//let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
-	var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
+	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
+	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
 	
 	
 	// LES INTÉRACTIONS SIMPLES
@@ -46,13 +46,13 @@ client.on("message", (message) => {
 	}
 	
 	/* Ajout d'un mot banni */
-	if (msg.startsWith(prefixe + "addban")) {
+	/*if (msg.startsWith(prefixe + "addban")) {
 		let mot = arg[0];
 		fs.writeFile("./banlist.json", JSON.stringify(mot, null, 2), (err) => {
 			if (err) throw err;
 			message.reply("le mot a bien été enregistré.");
 		});
-	}
+	}*/
 	
 	/* Le ping pong */
 	if (msg.startsWith(prefixe + "ping")) {
