@@ -26,7 +26,7 @@ client.on("message", (message) => {
 	msg = message.content.toLowerCase();
 	
 	//let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
-	var banlist = JSON.parse(fs.readFile("./banlist.json", "utf-8"));
+	var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
 	
 	
 	// LES INTÉRACTIONS SIMPLES
