@@ -4,7 +4,7 @@ const fs = require('fs');
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 10;				// Nombre d'images pour le générateur de valeur aléatoire
 const streamOptions = { seek : 0, volume : 5};
-const config = config.JSON;
+const config = require('./config.json');
 
 
 /*Fonction Aléatoire pour avoir des images random */
