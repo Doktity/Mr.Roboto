@@ -13,8 +13,6 @@ function alea(){
 }
 
 
-let prefixe = "$";
-
 /* Quand la console est prête */
 client.on('ready', async () => {
 	client.user.setActivity("$aled", {type: "WATCHING"})
@@ -30,7 +28,13 @@ client.on("message", (message) => {
 	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
 	let prefixes = JSON.parse(fs.readFile("./prefixes.json", "utf8"));
 	
-	let prefix = prefixes[message.guild.id].prefixes;
+	if(!prefixes[message.guild.id]){
+		prefixes[message.guild.id] = {
+			prefixes: config.prefixe
+		};
+	}
+	
+	let prefixe = prefixes[message.guild.id].prefixes;
 	
 	// LES INTÉRACTIONS SIMPLES
 	
