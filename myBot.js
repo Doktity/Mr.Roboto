@@ -18,6 +18,7 @@ client.on('ready', async () => {
 	client.user.setActivity("$aled", {type: "WATCHING"})
 });
 
+let prefixe = "$";
 
 client.on("message", async (message) => {
 	
@@ -35,7 +36,6 @@ client.on("message", async (message) => {
 	}
 	
 	let prefixe = prefixes[message.guild.id].prefixes;*/
-	let prefixe = "$";
 	
 	// LES INTÉRACTIONS SIMPLES
 	
