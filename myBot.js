@@ -26,7 +26,7 @@ client.on("message", (message) => {
 	
 	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
 	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
-	let prefixes = JSON.parse(fs.readFile("./prefixes.json", "utf8"));
+	let prefixes = JSON.parse(fs.readFilesSync("./prefixes.json", "utf8"));
 	
 	if(!prefixes[message.guild.id]){
 		prefixes[message.guild.id] = {
