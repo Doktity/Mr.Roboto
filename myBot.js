@@ -4,7 +4,7 @@ const fs = require('fs');
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 10;				// Nombre d'images pour le générateur de valeur aléatoire
 const streamOptions = { seek : 0, volume : 5};
-//const config = require("./config.json");
+const config = require("./config.json");
 
 
 /*Fonction Aléatoire pour avoir des images random */
@@ -28,9 +28,9 @@ client.on("message", (message) => {
 	
 	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
 	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
-	let config = JSON.parse(fs.readFile("./config.json", "utf8"));
+	let prefixes = JSON.parse(fs.readFile("./prefixes.json", "utf8"));
 	
-	let prefix = config[message.guild.id].prefixes;
+	let prefix = prefixes[message.guild.id].prefixes;
 	
 	// LES INTÉRACTIONS SIMPLES
 	
