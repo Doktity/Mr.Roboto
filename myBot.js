@@ -29,6 +29,7 @@ client.on("message", (message) => {
 	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
 	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
 	let config = JSON.parse(fs.readFile("./config.json", "utf-8"));
+	let fixe = config.prefixe;
 	
 	
 	// LES INTÉRACTIONS SIMPLES
@@ -57,7 +58,7 @@ client.on("message", (message) => {
 	}*/
 	
 	/* Le ping pong */
-	if (msg.startsWith(config[prefixe] + "ping")) {
+	if (msg.startsWith(fixe + "ping")) {
   		message.channel.send("pong!");
 	}
 
