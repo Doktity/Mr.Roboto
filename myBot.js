@@ -30,12 +30,6 @@ client.on("message", (message) => {
 	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
 	let config = JSON.parse(fs.readFile("./config.json", "utf8"));
 	
-	if(!config[message.guild.id]){
-		config[message.guild.id] = {
-			config: botconfig.prefix;
-		};
-	}
-	
 	let prefix = config[message.guild.id].prefixes;
 	
 	// LES INTÉRACTIONS SIMPLES
