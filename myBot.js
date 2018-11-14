@@ -29,8 +29,14 @@ client.on("message", (message) => {
 	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
 	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
 	let config = JSON.parse(fs.readFile("./config.json", "utf8"));
-	let fixe = config.prefixe;
 	
+	if(!config[message.guild.id]){
+		config[message.guild.id] = {
+			config: botconfig.prefix;
+		};
+	}
+	
+	let prefix = config[message.guild.id].prefixes;
 	
 	// LES INTÉRACTIONS SIMPLES
 	
@@ -58,7 +64,7 @@ client.on("message", (message) => {
 	}*/
 	
 	/* Le ping pong */
-	if (msg.startsWith(fixe + "ping")) {
+	if (msg.startsWith(prefix + "ping")) {
   		message.channel.send("pong!");
 	}
 
