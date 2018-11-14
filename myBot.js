@@ -28,7 +28,7 @@ client.on("message", (message) => {
 	
 	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
 	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
-	var config = JSON.parse(fs.readFile("./config.json", 'utf-8'));
+	let config = JSON.parse(fs.readFile("./config.json", "utf-8"));
 	
 	
 	// LES INTÉRACTIONS SIMPLES
