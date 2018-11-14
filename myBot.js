@@ -19,7 +19,7 @@ client.on('ready', async () => {
 });
 
 
-client.on("message", (message) => {
+client.on("message", async (message) => {
 	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
