@@ -57,7 +57,7 @@ client.on("message", (message) => {
 	}*/
 	
 	/* Le ping pong */
-	if (msg.startsWith(config.prefixe + "ping")) {
+	if (msg.startsWith(config[prefixe] + "ping")) {
   		message.channel.send("pong!");
 	}
 
