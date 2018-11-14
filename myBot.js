@@ -18,8 +18,8 @@ client.on('ready', async () => {
 	client.user.setActivity("$aled", {type: "WATCHING"})
 });
 
-//let prefixe = "$";
-let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+
+/*let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 	
 if(!prefixes[message.guild.id]){
 	prefixes[message.guild.id] = {
@@ -27,9 +27,11 @@ if(!prefixes[message.guild.id]){
 	};
 }
 	
-let prefixe = prefixes[message.guild.id].prefixes;
+let prefixe = prefixes[message.guild.id].prefixes;*/
 
 client.on("message", (message) => {
+	
+	let prefixe = "$";
 	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
