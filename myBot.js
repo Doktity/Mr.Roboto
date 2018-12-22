@@ -110,6 +110,12 @@ client.on("message", (message) => {
 		});
 	}
 	
+	/*ERIC*/
+	if (msg.startsWith(prefixe + "Eric")) {
+		message.channel.send("", {
+			file : "./image/eric.png"
+		});
+	}
 	
 	/* Quand quelqu'un est nul */
 	if (msg.startsWith(prefixe + "nul")) {
