@@ -111,7 +111,7 @@ client.on("message", (message) => {
 	}
 	
 	/*ERIC*/
-	if (msg.startsWith(prefixe + "Eric")) {
+	if (msg.startsWith(prefixe + "eric")) {
 		message.channel.send("", {
 			file : "./image/eric.png"
 		});
