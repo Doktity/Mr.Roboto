@@ -117,6 +117,20 @@ client.on("message", (message) => {
 		});
 	}
 	
+	/*BEN*/
+	if (msg.startsWith(prefixe + "ben")) {
+		message.channel.send("", {
+			file : "./image/ben.png"
+		});
+	}
+	
+	/*pierre*/
+	if (msg.startsWith(prefixe + "pierre")) {
+		message.channel.send("", {
+			file : "./image/Pierre.png"
+		});
+	}
+	
 	/* Quand quelqu'un est nul */
 	if (msg.startsWith(prefixe + "nul")) {
 		message.channel.send("gros naze", {
