@@ -138,6 +138,19 @@ client.on("message", (message) => {
 		});
 	}
 	
+	
+	/* Invoquer FAT YOSHI */
+	if (msg.startsWith(prefixe + "yoshi")) {
+		message.channel.send({embed: {
+			color: 3447003,
+			author: {
+      				name: client.user.username,
+     				icon_url: client.user.avatarURL
+    			},
+			title: "FAT YOSHI",
+			url: "https://www.youtube.com/watch?v=1FHGoAR5Q-c",);
+		}});
+	}
 
 	
 	// LES IMAGES ALÉATOIRES
