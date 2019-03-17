@@ -163,8 +163,8 @@ client.on("message", (message) => {
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
 		message.reply("yoo");
-		audio("yoshi");
-		/*const channel = message.member.voiceChannel;
+		//audio("yoshi");
+		const channel = message.member.voiceChannel;
 		let i;
 		message.channel.send("yee");
 		if (!channel) {
@@ -178,7 +178,7 @@ client.on("message", (message) => {
 						channel.leave();	
 					});
 				});
-		}*/
+		}
 	}
 	
 	/* Pour que le bot sorte du channel */
