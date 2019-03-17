@@ -162,7 +162,7 @@ client.on("message", (message) => {
 	
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
-		message.channel.send("yoo");
+		message.reply("yoo");
 		audio("yoshi");
 	}
 	
