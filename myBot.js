@@ -145,7 +145,10 @@ client.on("message", (message) => {
   		if (!channel) return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
  		channel.join().then(connection => {
     // Yay, it worked!
-			message.channel.send("yee");
+			let video = connection.play(ytdl("https://www.youtube.com/watch?v=1FHGoAR5Q-c", { filter: "audioonly" });
+			video.on('end', () => {
+				channel.leave();
+			});
   		});
 	}
 
