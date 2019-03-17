@@ -146,7 +146,7 @@ client.on("message", (message) => {
 			.setColor(0x008000)
 			.setThumbnail("https://www.youtube.com/watch?v=1FHGoAR5Q-c")
 			.setURL("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
-		message.channel.send(yoshi);
+		message.channel.send({yoshi});
 	}
 
 	
