@@ -163,19 +163,6 @@ client.on("message", (message) => {
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
 		audio("yoshi");
-		/*const channel = message.member.voiceChannel;
-		if (!channel) {
-			return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
-		}
-		if(!message.guild.voiceConnection){
-			channel.join()
-				.then(connection => {
-					const dispatcher = connection.playFile("./video/yoshi.mp3");
-					dispatcher.on('end', () => {
-						channel.leave();	
-					});
-				});
-		}*/
 	}
 	
 	/* Pour que le bot sorte du channel */
