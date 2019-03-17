@@ -1,6 +1,7 @@
 const Discord = require("discord.js");		//Pour utiliser la librairie discord.js
 const ytdl = require('ytdl-core');
 const fs = require('fs');
+const ffmpeg = require('ffmpeg');
 const client = new Discord.Client();		//Pour créer un nouveau client discord
 const nb_image = 10;				// Nombre d'images pour le générateur de valeur aléatoire
 const streamOptions = { seek : 0, volume : 5};
