@@ -36,7 +36,6 @@ client.on("message", (message) => {
 	function audio(param){
 		const channel = message.member.voiceChannel;
 		let i;
-		message.channel.send("yee");
 		if (!channel) {
 			for(i = 0; video[i] != param; i++);
 			return message.reply(video[i+1]);
