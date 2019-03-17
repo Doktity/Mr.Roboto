@@ -16,7 +16,7 @@ let video = ["yoshi", "https://www.youtube.com/watch?v=1FHGoAR5Q-c"];
 
 /* Fonction pour lire un fichier audio */
 function audio(param){
-	const channel = message.member.voiceChannel;
+	/*const channel = message.member.voiceChannel;
 	let i;
 	message.channel.send("yee");
 	if (!channel) {
@@ -31,7 +31,8 @@ function audio(param){
 					channel.leave();	
 				});
 			});
-	}
+	}*/
+	return message.reply(video[1] + param);
 }
 
 
@@ -162,11 +163,8 @@ client.on("message", (message) => {
 	
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
-		message.reply("yoo");
-		//audio("yoshi");
-		const channel = message.member.voiceChannel;
-		let i;
-		message.channel.send("yee");
+		audio("yoshi");
+		/*const channel = message.member.voiceChannel;
 		if (!channel) {
 			return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
 		}
@@ -178,7 +176,7 @@ client.on("message", (message) => {
 						channel.leave();	
 					});
 				});
-		}
+		}*/
 	}
 	
 	/* Pour que le bot sorte du channel */
