@@ -141,7 +141,7 @@ client.on("message", (message) => {
 	
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
-		const channel = client.channels.get("mychannelid");
+		const channel = author.channel.id;
   		if (!channel) message.channel.send("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
  		channel.join().then(connection => {
     // Yay, it worked!
