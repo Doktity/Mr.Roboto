@@ -144,7 +144,7 @@ client.on("message", (message) => {
   		if (!channel) {
 			return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
 		}
-		if(message.guild.voiceConnection){
+		if(!message.guild.voiceConnection){
 			channel.join()
 				.then(connection => {
 					const dispatcher = connection.playFile("./video/yoshi.mp3");
