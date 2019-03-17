@@ -148,7 +148,9 @@ client.on("message", (message) => {
      				icon_url: client.user.avatarURL
     			},
 			title: "FAT YOSHI",
-			url: "https://www.youtube.com/watch?v=1FHGoAR5Q-c"
+			url: "https://www.youtube.com/watch?v=1FHGoAR5Q-c",
+			height: 360,
+			width: 480
 		}});
 	}
 
