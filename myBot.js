@@ -141,7 +141,15 @@ client.on("message", (message) => {
 	
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
-		message.channel.send("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
+		const channel = client.channels.get("mychannelid");
+  		if (!channel) message.channel.send("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
+ 		channel.join().then(connection => {
+    // Yay, it worked!
+    			console.log("Successfully connected.");
+  		}).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+    			console.error(e);
+ 		});
 	}
 
 	
