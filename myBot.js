@@ -164,6 +164,21 @@ client.on("message", (message) => {
 	if (msg.startsWith(prefixe + "yoshi")) {
 		message.reply("yoo");
 		audio("yoshi");
+		/*const channel = message.member.voiceChannel;
+		let i;
+		message.channel.send("yee");
+		if (!channel) {
+			return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
+		}
+		if(!message.guild.voiceConnection){
+			channel.join()
+				.then(connection => {
+					const dispatcher = connection.playFile("./video/yoshi.mp3");
+					dispatcher.on('end', () => {
+						channel.leave();	
+					});
+				});
+		}*/
 	}
 	
 	/* Pour que le bot sorte du channel */
