@@ -138,7 +138,6 @@ client.on("message", (message) => {
 		});
 	}
 	
-	
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
 		const channel = message.member.voiceChannel;
@@ -152,6 +151,15 @@ client.on("message", (message) => {
 					channel.leave();
 				});
   			});
+	}
+	
+	/* Pour que le bot sorte du channel */
+	if (msg.startsWith(prefixe + "sort")) {
+		const channel = message.member.voiceChannel;
+		if (!channel) {
+			return message.reply("JE PEUX PAS SORTIR je suis coincé !");
+		}
+		channel.leave();
 	}
 
 	
