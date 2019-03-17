@@ -32,7 +32,7 @@ function audio(param){
 				});
 			});
 	}*/
-	return message.reply(video[1] + param);
+	return message.reply(param);
 }
 
 
