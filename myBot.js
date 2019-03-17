@@ -142,9 +142,10 @@ client.on("message", (message) => {
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
 		const channel = message.member.voiceChannel;
-  		if (!channel) return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
+  		if (!channel) {
+			return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
+		}
  		channel.join().then(connection => {
-    // Yay, it worked!
 			let video = connection.play(ytdl("https://www.youtube.com/watch?v=1FHGoAR5Q-c", { filter: "audioonly" });
 			video.on('end', () => {
 				channel.leave();
