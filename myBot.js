@@ -12,6 +12,27 @@ function alea(){
 	return Math.floor(Math.random() * nb_image);
 }
 
+let video = ["yoshi", "https://www.youtube.com/watch?v=1FHGoAR5Q-c"];
+
+/* Fonction pour lire un fichier audio */
+function audio(param){
+	const channel = message.member.voiceChannel;
+	let i;
+	if (!channel) {
+		for(i = 0; video[i] == param; i++);
+		return message.reply(video[i+1]);
+	}
+	if(!message.guild.voiceConnection){
+		channel.join()
+			.then(connection => {
+				const dispatcher = connection.playFile("./video/" + param + ".mp3");
+				dispatcher.on('end', () => {
+					channel.leave();	
+				});
+			});
+	}
+}
+
 
 /* Quand la console est prête */
 client.on('ready', async () => {
@@ -140,19 +161,7 @@ client.on("message", (message) => {
 	
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
-		const channel = message.member.voiceChannel;
-  		if (!channel) {
-			return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
-		}
-		if(!message.guild.voiceConnection){
-			channel.join()
-				.then(connection => {
-					const dispatcher = connection.playFile("./video/yoshi.mp3");
-					dispatcher.on('end', () => {
-						channel.leave();	
-					});
-				});
-		}
+		audio("yoshi");
 	}
 	
 	/* Pour que le bot sorte du channel */
