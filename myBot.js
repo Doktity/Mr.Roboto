@@ -19,7 +19,7 @@ function audio(param){
 	const channel = message.member.voiceChannel;
 	let i;
 	if (!channel) {
-		for(i = 0; video[i] == param; i++);
+		for(i = 0; video[i] != param; i++);
 		return message.reply(video[i+1]);
 	}
 	if(!message.guild.voiceConnection){
