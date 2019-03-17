@@ -148,9 +148,7 @@ client.on("message", (message) => {
 			.then(connection => {
 				const dispatcher = connection.playFile("./video/yoshi.mp3");
 				dispatcher.on('end', () => {
-					setTimeout(function(){
-						channel.leave();
-					}, 2000);	
+					channel.leave();	
 				});
   			});
 	}
