@@ -149,8 +149,7 @@ client.on("message", (message) => {
     			},
 			title: "FAT YOSHI",
 			url: "https://www.youtube.com/watch?v=1FHGoAR5Q-c",
-			height: 360,
-			width: 480
+			width: "480"
 		}});
 	}
 
