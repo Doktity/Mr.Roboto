@@ -146,7 +146,7 @@ client.on("message", (message) => {
 		}
  		channel.join()
 			.then(connection => {
-				let video = ytdl("https://www.youtube.com/watch?v=1FHGoAR5Q-c", { filter: "audioonly" }).pipe(fs.createWriteStream("video.flv"));
+				let video = connection.play(ytdl("https://www.youtube.com/watch?v=1FHGoAR5Q-c", { filter: "audioonly" }).pipe(fs.createWriteStream("video.flv")));
 				message.reply("yo");
 				video.on('end', () => {
 					channel.leave();
