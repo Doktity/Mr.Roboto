@@ -147,7 +147,7 @@ client.on("message", (message) => {
 		}
  		channel.join()
 			.then(connection => {
-				const dispatcher = connection.playFile("./video/yoshi.mp3");
+				const dispatcher = connection.play("./video/yoshi.mp3");
   			});
 	}
 	
