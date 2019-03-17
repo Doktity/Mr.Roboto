@@ -145,9 +145,9 @@ client.on("message", (message) => {
 			return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
 		}
  		channel.join()
-			/*.then(connection => {
+			.then(connection => {
 				const dispatcher = connection.playFile("./video/yoshi.mp3");
-  			})*/;
+  			});
 	}
 	
 	/* Pour que le bot sorte du channel */
