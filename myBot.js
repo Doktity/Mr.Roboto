@@ -145,12 +145,13 @@ client.on("message", (message) => {
   		if (!channel) {
 			return message.reply("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
 		}
- 		channel.join().then(connection => {
-			let video = connection.play(ytdl("https://www.youtube.com/watch?v=1FHGoAR5Q-c", { filter: "audioonly" });
-			video.on('end', () => {
-				channel.leave();
-			});
-  		});
+ 		channel.join()
+			.then(connection => {
+				let video = connection.play(ytdl("https://www.youtube.com/watch?v=1FHGoAR5Q-c", { filter: "audioonly" }));
+				video.on('end', () => {
+					channel.leave();
+				});
+  			});
 	}
 
 	
