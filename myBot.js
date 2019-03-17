@@ -141,16 +141,12 @@ client.on("message", (message) => {
 	
 	/* Invoquer FAT YOSHI */
 	if (msg.startsWith(prefixe + "yoshi")) {
-		message.channel.send({embed: {
-			color: 3447003,
-			author: {
-      				name: client.user.username,
-     				icon_url: client.user.avatarURL
-    			},
-			title: "FAT YOSHI",
-			url: "https://www.youtube.com/watch?v=1FHGoAR5Q-c",
-			width: "480"
-		}});
+		let yoshi = new Discord.RichEmbed()
+			.setTitle("FAT YOSHI")
+			.setColor(0x008000)
+			.setThumbnail("https://www.youtube.com/watch?v=1FHGoAR5Q-c")
+			.setURL("https://www.youtube.com/watch?v=1FHGoAR5Q-c");
+		message.channel.send(yoshi);
 	}
 
 	
