@@ -184,7 +184,9 @@ client.on("message", (message) => {
 	
 	/* Images */
 	if(msg.startsWith(prefixe + "image")) {
-		image(arg[0]);
+		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
+  		const command = args.shift();
+		image(command);
 	}
 	
 	/* Images aléatoires de Watanabe You */
