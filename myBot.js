@@ -53,7 +53,7 @@ client.on("message", (message) => {
 	
 	function image(param){
 		message.channel.send("", {
-			file : "./image/" + param + alea() + ".jpg"
+			file : "./image/img_" + param + alea() + ".jpg"
 		});
 	}
 	
@@ -159,7 +159,7 @@ client.on("message", (message) => {
 	}
 	
 	/* Quand quelqu'un est nul */
-	if (msg.startsWith(prefixe + "nul")) {
+	if (msg.startsWith(prefixe + "naze")) {
 		message.channel.send("gros naze", {
 			file : "./image/img_naze.jpg"
 		});
