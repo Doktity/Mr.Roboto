@@ -65,20 +65,6 @@ client.on("message", (message) => {
 		});
 	}
 	
-	
-	function imagegif(param){
-		res = alea();
-		if ((res % 2) === 0) {
-			message.channel.send("", {
-				file : "./image/img_" + param + res + ".gif"
-			});
-		} else {
-			message.channel.send("", {
-				file : "./image/img_" + param + res + ".jpg"
-			});
-		}
-	}
-	
 //-----------------------------------------------------------------------------------------------------------------------//
 	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
@@ -219,14 +205,6 @@ client.on("message", (message) => {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
 		let gf = args[1];
 		gif(gf);
-	}
-	
-	
-	/* Images et gifs aléatoires */
-	if(msg.startsWith(prefixe + "imggif")) {
-		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
-		let imgif = args[1];
-		imagegif(imgif);
 	}
 
 
