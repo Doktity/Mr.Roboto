@@ -186,8 +186,9 @@ client.on("message", (message) => {
 	if(msg.startsWith(prefixe + "image")) {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
   		const command = args.shift();
-		message.channel.send(arg[0]);
-		image(arg[0]);
+		let img = arg[0];
+		message.channel.send(img);
+		//image(img);
 	}
 	
 	/* Images aléatoires de Watanabe You */
