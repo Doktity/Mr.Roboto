@@ -51,11 +51,35 @@ client.on("message", (message) => {
 		}
 	}
 	
+	
 	function image(param){
 		message.channel.send("", {
 			file : "./image/img_" + param + alea() + ".jpg"
 		});
 	}
+	
+	
+	function gif(param){
+		message.channel.send("", {
+			file : "./image/img_" + param + alea() + ".gif"
+		});
+	}
+	
+	
+	function imagegif(param){
+		res = alea();
+		if ((res % 2) === 0) {
+			message.channel.send("", {
+				file : "./image/img_" + param + res + ".gif"
+			});
+		} else {
+			message.channel.send("", {
+				file : "./image/img_" + param + res + ".jpg"
+			});
+		}
+	}
+	
+//-----------------------------------------------------------------------------------------------------------------------//
 	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
@@ -63,7 +87,7 @@ client.on("message", (message) => {
 	let banlist = ["roux", "r o u x", "r0ux", "r.o.u.x"]; // Les mots B A N N I S
 	//var banlist = JSON.parse(fs.readFile("./banlist.json", 'utf-8'));
 	
-	// LES INTÉRACTIONS SIMPLES
+//--------------------------------------------------- LES INTÉRACTIONS SIMPLES---------------------------------------------//
 	
 	/* Bannissement du mot " roux " */
 	/* Quand on trouve le mot à l'intérieur du message on le détruit */
@@ -180,96 +204,33 @@ client.on("message", (message) => {
 	}
 
 	
-	// LES IMAGES ALÉATOIRES
+//-------------------------------------------------LES IMAGES ALÉATOIRES-------------------------------------------------//
 	
-	/* Images */
+	/* Images aléatoires */
 	if(msg.startsWith(prefixe + "image")) {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
 		let img = args[1];
 		image(img);
 	}
 	
-	/* Images aléatoires de Watanabe You */
-	if (msg.startsWith(prefixe + "you")) {
-		message.channel.send("", {
-			file : "./image/img_you" + alea() + ".jpg"
-		});
-	}
-
 	
-	/* Images aléatoires quand on est content */
-	if (msg.startsWith(prefixe + "joie")) {
-		message.channel.send("La joie", {
-			file : "./image/img_joie" + alea() + ".jpg"
-		});
-	}
-	
-
-	/* La dance */
-	if (msg.startsWith(prefixe + "dance")) {
-		message.channel.send("DANCE", {
-			file : "./image/img_dance" + alea() + ".gif"
-		});
-	}
-
-
-	/* La fête */
-	if (msg.startsWith(prefixe + "party")) {
-		message.channel.send("LA FETE", {
-			file : "./image/img_party" + alea() + ".gif"
-		});
-	}
-
-
-	/* Images aléatoires quand on est triste */
-	if (msg.startsWith(prefixe + "triste")) {
-		message.channel.send("La tristesse", {
-			file : "./image/img_triste" + alea() + ".jpg"
-		});
-	}
-	
-
-	/* Images aléatoires quand on est JOJO */
-	if (msg.startsWith(prefixe + "jojo")) {
-		message.channel.send("SONO CHI NO SADAME", {
-			file : "./image/img_jojo" + alea() + ".jpg"
-		});
+	/* Gifs aléatoires */
+	if(msg.startsWith(prefixe + "gif")) {
+		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
+		let gif = args[1];
+		gif(gif);
 	}
 	
 	
-	/* images aléatoires quand on est déclenché 
-	*  les gif ont un nombre paire, et les images un nombre impaire */
-	if (msg.startsWith(prefixe + "triggered")) {
-		res = alea();
-		if ((res % 2) === 0) {
-			message.channel.send("", {
-				file : "./image/img_triggered" + res + ".gif"
-			});
-		} else {
-			message.channel.send("", {
-				file : "./image/img_triggered" + res + ".jpg"
-			});
-		}
-	}
-	
-	
-	/* images aléatoires quand on fait le beau
-	*  les gif ont un nombre paire, et les images un nombre impaire */
-	if (msg.startsWith(prefixe + "beau")) {
-		res = alea();
-		if ((res % 2) === 0) {
-			message.channel.send("", {
-				file : "./image/img_smug" + res + ".gif"
-			});
-		} else {
-			message.channel.send("", {
-				file : "./image/img_smug" + res + ".jpg"
-			});
-		}
+	/* Images et gifs aléatoires */
+	if(msg.startsWith(prefixe + "imagegif")) {
+		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
+		let imgif = args[1];
+		imagegif(imgif);
 	}
 
 
-	// Les autres trucs un peu plus compliqué
+//-------------------------------------------Les autres trucs un peu plus compliqué-----------------------------------------//
 	
 	/* voir l'avatar des gens */
 	if(message.content.startsWith(prefixe + "avatar")) { //IF for the command.
