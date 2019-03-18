@@ -223,7 +223,7 @@ client.on("message", (message) => {
 	
 	
 	/* Images et gifs aléatoires */
-	if(msg.startsWith(prefixe + "imagegif")) {
+	if(msg.startsWith(prefixe + "imggif")) {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
 		let imgif = args[1];
 		imagegif(imgif);
