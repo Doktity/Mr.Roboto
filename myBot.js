@@ -51,6 +51,12 @@ client.on("message", (message) => {
 		}
 	}
 	
+	function image(param){
+		message.channel.send("", {
+			file : "./image/" + param + alea() + ".jpg"
+		});
+	}
+	
 	/* Pour que les commandes soient comprises en minuscule ou en majuscule, on transforme le message en minuscule */
 	msg = message.content.toLowerCase();
 	
@@ -175,6 +181,11 @@ client.on("message", (message) => {
 
 	
 	// LES IMAGES ALÉATOIRES
+	
+	/* Images */
+	if(msg.startsWith(prefixe + "image")) {
+		image(arg[0]);
+	}
 	
 	/* Images aléatoires de Watanabe You */
 	if (msg.startsWith(prefixe + "you")) {
