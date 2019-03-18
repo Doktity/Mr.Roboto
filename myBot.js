@@ -52,15 +52,23 @@ client.on("message", (message) => {
 	}
 	
 	
+	let img_texte = ["you", "yousoro", "joie", "La joie", "triste", "La tristesse", "dance", "DANCE",
+			 "party", "LA FETE", "jojo", "SONO CHI NO SADAME", "triggered", "QU'AS TU DIS ?!", "smug", "hehehe"]
+		
+	
 	function image(param){
-		message.channel.send("", {
+		let i;
+		for(i = 0; img_texte[i] != param; i++);
+		message.channel.send(img_texte[i+1], {
 			file : "./image/img_" + param + alea() + ".jpg"
 		});
 	}
 	
 	
 	function gif(param){
-		message.channel.send("", {
+		let i;
+		for(i = 0; img_texte[i] != param; i++);
+		message.channel.send(img_texte[i+1], {
 			file : "./image/img_" + param + alea() + ".gif"
 		});
 	}
