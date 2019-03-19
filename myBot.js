@@ -183,10 +183,14 @@ client.on("message", (message) => {
 		});
 	}
 	
-	/* Invoquer FAT YOSHI */
-	if (msg.startsWith(prefixe + "yoshi")) {
-		audio("yoshi");
+//-------------------------------------------------LES COMMANDES AUDIO----------------------------------------------//
+	/* invoquer un fichier audio */
+	if(msg.startsWith(prefixe + "audio")) {
+		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
+		let mp3 = args[1];
+		audio(mp3);
 	}
+	
 	
 	/* Pour que le bot sorte du channel */
 	if (msg.startsWith(prefixe + "sort")) {
