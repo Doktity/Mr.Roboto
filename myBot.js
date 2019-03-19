@@ -291,7 +291,7 @@ client.on("message", (message) => {
 	/* Pour obtenir les commandes */
 	if (msg.startsWith(prefixe + "aled")) {
 		fs.readFileSync(./aled.txt, {encoding :  'utf8'}, (err, data) => {
-			message.author.send(data);
+			message.author.sendMessage(data);
 		});
 	}
 	
