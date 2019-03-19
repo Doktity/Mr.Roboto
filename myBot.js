@@ -61,7 +61,7 @@ client.on("message", (message) => {
 		for(i = 0; img_texte[i] != param; i++);
 		message.channel.send(img_texte[i+1], {
 			file : "./image/img_" + param + alea() + ".jpg"
-		}).catch(error => message.reply("Argument incorrect, veuillez réessayer."));
+		});
 	}
 	
 	
