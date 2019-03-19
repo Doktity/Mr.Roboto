@@ -290,7 +290,17 @@ client.on("message", (message) => {
 	
 	/* Pour obtenir les commandes */
 	if (msg.startsWith(prefixe + "aled")) {
-		message.author.sendMessage("Je viens t'aider !\n$ping -> renvoi pong\n$gateau -> renvoi un délicieux gateau au chocolat\n$image + argument -> renvoie une image suivant l'argument mis\n$gif + argument -> renvoie un gif suivant l'argument mis\n$audio + argument -> renvoi un son en vocal suivant l'argument mis\n$emote + le tag de quelqu'un -> renvoi un gif avec la mention du tag\n$avatar + le tag de quelqu'un -> renvoi l'avatar de la personne mentionnée\n$pascontent -> renvoi un gif qui montre ta colère\n$naze -> renvoi une image qui te nargue à la gueule\n$analyste -> renvoi un même interdit au Yemen\n");
+		message.author.sendMessage("Je viens t'aider !\n
+					   $ping -> renvoi pong\n
+					   $gateau -> renvoi un délicieux gateau au chocolat\n
+					   $image + argument -> renvoie une image suivant l'argument mis\n
+					   $gif + argument -> renvoie un gif suivant l'argument mis\n
+					   $audio + argument -> renvoi un son en vocal suivant l'argument mis\n
+					   $emote + le tag de quelqu'un -> renvoi un gif avec la mention du tag\n
+					   $avatar + le tag de quelqu'un -> renvoi l'avatar de la personne mentionnée\n
+					   $pascontent -> renvoi un gif qui montre ta colère\n
+					   $naze -> renvoi une image qui te nargue à la gueule\n
+					   $analyste -> renvoi un même interdit au Yemen\n");
 	}
 	
 });
