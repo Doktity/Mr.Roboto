@@ -307,14 +307,15 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if (message.content.startsWith(prefixe + "play")) {
-		console.log('Got a song request!');
+		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
+		let musique = args[1];
 		const channel = message.member.voiceChannel;
 		if (!channel) {
-			return message.reply('Please be in a voice channel first!');
+			return message.reply('Faut être dans un channel vocal!');
 		}
 		channel.join()
 			.then(connection => {
-				const stream = ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ', { filter: 'audioonly' });
+				const stream = ytdl(musique, { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream);
 				dispatcher.on('end', () => {
 					channel.leave();
