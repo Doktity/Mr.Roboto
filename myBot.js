@@ -40,15 +40,16 @@ client.on("message", (message) => {
 			for(i = 0; video[i] != param; i++);
 			return message.reply(video[i+1]);
 		}
-		if(!message.guild.voiceConnection){
-			channel.join()
-				.then(connection => {
-					const dispatcher = connection.playFile("./video/" + param + ".mp3");
-					dispatcher.on('end', () => {
-						channel.leave();	
-					});
-				});
+		if (message.guild.voiceConnection) {
+			return message.reply('Je suis déjà dans une conversation vocal là !');
 		}
+		channel.join()
+			.then(connection => {
+				const dispatcher = connection.playFile("./video/" + param + ".mp3");
+				dispatcher.on('end', () => {
+					channel.leave();	
+				});
+			});
 	}
 	
 	
@@ -201,6 +202,27 @@ client.on("message", (message) => {
 		}
 		channel.leave();
 	}
+	
+	
+	if (message.content.startsWith(prefixe + "play")) {
+		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
+		let musique = args[1];
+		const channel = message.member.voiceChannel;
+		if (!channel) {
+			return message.reply('Faut être dans un channel vocal!');
+		}
+		if (message.guild.voiceConnection) {
+			return message.reply('Je suis déjà dans une conversation vocal là !');
+		}
+		channel.join()
+			.then(connection => {
+				const stream = ytdl(musique, { filter: 'audioonly' });
+				const dispatcher = connection.playStream(stream);
+				dispatcher.on('end', () => {
+					channel.leave();
+				});
+			});
+	}
 
 	
 //-------------------------------------------------LES IMAGES ALÉATOIRES-------------------------------------------------//
@@ -301,26 +323,6 @@ client.on('message', message => {
 	if (message.content.startsWith('coucou') || message.content.startsWith('bonjour') || message.content.startsWith('salut')) {
 		let user = message.member.user;
 		message.channel.send('COUCOU ' + user);
-	}
-});
-
-
-client.on('message', message => {
-	if (message.content.startsWith(prefixe + "play")) {
-		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
-		let musique = args[1];
-		const channel = message.member.voiceChannel;
-		if (!channel) {
-			return message.reply('Faut être dans un channel vocal!');
-		}
-		channel.join()
-			.then(connection => {
-				const stream = ytdl(musique, { filter: 'audioonly' });
-				const dispatcher = connection.playStream(stream);
-				dispatcher.on('end', () => {
-					channel.leave();
-				});
-			});
 	}
 });
 
