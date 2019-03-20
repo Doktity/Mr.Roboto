@@ -191,6 +191,9 @@ client.on("message", (message) => {
 	if(msg.startsWith(prefixe + "audio")) {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
 		let mp3 = args[1];
+		if (mp3 == undefined) {
+			return message.reply('Passez un argument après avoir appelé la fonction ! ($audio **argument**)');
+		}
 		audio(mp3);
 	}
 	
@@ -209,6 +212,9 @@ client.on("message", (message) => {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
 		let musique = args[1];
 		const channel = message.member.voiceChannel;
+		if (musique == undefined) {
+			return message.reply('Passez un argument après avoir appelé la fonction ! ($play **argument**)');
+		}
 		if (!channel) {
 			return message.reply('Faut être dans un channel vocal!');
 		}
@@ -232,6 +238,9 @@ client.on("message", (message) => {
 	if(msg.startsWith(prefixe + "image")) {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
 		let img = args[1];
+		if (img == undefined) {
+			return message.reply('Passez un argument après avoir appelé la fonction ! ($image **argument**)');
+		}
 		image(img);
 	}
 	
@@ -240,6 +249,9 @@ client.on("message", (message) => {
 	if(msg.startsWith(prefixe + "gif")) {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
 		let gf = args[1];
+		if (gf == undefined) {
+			return message.reply('Passez un argument après avoir appelé la fonction ! ($gif **argument**)');
+		}
 		gif(gf);
 	}
 
