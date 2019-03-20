@@ -30,7 +30,7 @@ if(!prefixes[message.guild.id]){
 
 client.on("message", (message) => {
 	
-	let video = ["yoshi", "https://www.youtube.com/watch?v=1FHGoAR5Q-c"];
+	let video = ["yoshi", "https://www.youtube.com/watch?v=1FHGoAR5Q-c", "cowboy", "https://www.youtube.com/watch?v=yBLdQ1a4-JI"];
 
 	/* Fonction pour lire un fichier audio */
 	function audio(param){
