@@ -314,7 +314,7 @@ client.on('message', message => {
 		}
 		channel.join()
 			.then(connection => {
-				const stream = YTDL('https://www.youtube.com/watch?v=dQw4w9WgXcQ', { filter: 'audioonly' });
+				const stream = ytdl('https://www.youtube.com/watch?v=dQw4w9WgXcQ', { filter: 'audioonly' });
 				const dispatcher = connection.playStream(stream);
 				dispatcher.on('end', () => {
 					channel.leave();
