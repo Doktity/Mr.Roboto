@@ -212,6 +212,7 @@ client.on("message", (message) => {
 		const args = message.content.slice(prefixe.length).trim().split(/ +/g);
 		let musique = args[1];
 		const channel = message.member.voiceChannel;
+		const streamOptions = { seek: 0, volume: 0.5 };
 		if (musique == undefined) {
 			return message.reply('Passez un argument après avoir appelé la fonction ! ($play **argument**)');
 		}
@@ -224,7 +225,7 @@ client.on("message", (message) => {
 		channel.join()
 			.then(connection => {
 				const stream = ytdl(musique, { filter: 'audioonly' });
-				const dispatcher = connection.playStream(stream);
+				const dispatcher = connection.playStream(stream, streamOptions);
 				dispatcher.on('end', () => {
 					channel.leave();
 				});
