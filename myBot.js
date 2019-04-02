@@ -38,7 +38,10 @@ client.on("message", (message) => {
 		const channel = message.member.voiceChannel;
 		let i;
 		if (!channel) {
-			for(i = 0; video[i] != param; i++);
+			for(i = 0; video[i] != param || i != video.length; i++);
+			if(i == img_texte.length) {
+				return message.reply('Mauvais argument, essayez en un autre !');
+			}
 			return message.reply(video[i+1]);
 		}
 		if (message.guild.voiceConnection) {
@@ -61,7 +64,10 @@ client.on("message", (message) => {
 	
 	function image(param){
 		let i;
-		for(i = 0; img_texte[i] != param; i++);
+		for(i = 0; img_texte[i] != param || i != img_texte.length; i++);
+		if(i == img_texte.length) {
+			return message.reply('Mauvais argument, essayez en un autre !');
+		}
 		message.channel.send(img_texte[i+1], {
 			file : "./image/img_" + param + alea() + ".jpg"
 		});
@@ -70,7 +76,10 @@ client.on("message", (message) => {
 	
 	function gif(param){
 		let i;
-		for(i = 0; img_texte[i] != param; i++);
+		for(i = 0; img_texte[i] != param || i != img_texte.length; i++);
+		if(i == img_texte.length) {
+			return message.reply('Mauvais argument, essayez en un autre !');
+		}
 		message.channel.send(img_texte[i+1], {
 			file : "./image/img_" + param + alea() + ".gif"
 		});
