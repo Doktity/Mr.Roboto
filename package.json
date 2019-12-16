@@ -12,4 +12,7 @@
     "ffmpeg-binaries": "^4.0.0",
     "jsonfile": "^5.0.0"
   }
+  "engines": {
+    "node": "12.13.0"
+  }
 }
