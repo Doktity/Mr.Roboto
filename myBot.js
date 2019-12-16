@@ -59,7 +59,7 @@ client.on("message", (message) => {
 	
 	let img_texte = ["you", "yousoro", "joie", "La joie", "triste", "La tristesse", "dance", "DANCE",
 			 "party", "LA FETE", "jojo", "SONO CHI NO SADAME", "triggered", "QU'AS TU DIS ?!",
-			 "smug", "hehehe", "rover", "woof woof"]
+			 "smug", "hehehe", "rover", "woof woof", "coeur", "RÉPANDEZ L'AMOUR"]
 		
 	
 	function image(param){
