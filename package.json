@@ -10,9 +10,6 @@
     "discord.js": "^11.5.1",
     "ytdl-core": "^1.0.3",
     "ffmpeg-binaries": "^4.0.0",
-    "jsonfile": "^5.0.0",
-    "node-opus": "^0.3.3",
-    "opusscript": "^0.0.7",
-    "request": "2.88.0"
+    "jsonfile": "^5.0.0"
   }
 }
