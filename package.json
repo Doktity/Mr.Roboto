@@ -8,11 +8,6 @@
   },
   "dependencies": {
     "discord.js": "^11.1.0",
-    "ytdl-core": "^0.20.2",
-    "ffmpeg-binaries": "^4.0.0",
-    "jsonfile": "^4.0.0",
-    "node-opus": "^0.3.0",
-    "opusscript": "^0.0.6",
     "request": "2.81.0"
   }
 }
